@@ -127,7 +127,7 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
                       Hasta 0.6 SMMLV
                     </div>
                     <span className="text-xs font-bold text-amber-800 block mt-1">
-                      ($780.000 COP aprox. por mes)
+                      ($1.050.543 COP por mes)
                     </span>
                   </div>
 
@@ -268,7 +268,7 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
               </div>
               <h4 className="text-base font-black text-[#003B70]">6. Tope Máximo del Canon</h4>
               <p className="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
-                El canon de arrendamiento mensual <strong>no debe superar el 1% del tope máximo de la VIS (135 SMMLV)</strong>. Para 2026: canon &le; $2.360.000 COP.
+                El canon de arrendamiento mensual <strong>no debe superar el 1% del tope máximo de la VIS (135 SMMLV)</strong>. Para el año en curso: canon &le; $2.363.722 COP.
               </p>
             </div>
 

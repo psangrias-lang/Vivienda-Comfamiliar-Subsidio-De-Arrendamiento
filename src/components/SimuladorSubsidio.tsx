@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Calculator, CheckCircle2, AlertTriangle, KeyRound, ArrowRight } from 'lucide-react';
 
 export const SimuladorSubsidio: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso }) => {
-  const SMMLV_2026 = 1300000; // SMMLV de referencia 2026
-  const MAX_SUB_ARRIENDO_MENSUAL = SMMLV_2026 * 0.6; // 0.6 SMMLV = $780.000
-  const TOPE_VIS = SMMLV_2026 * 135; // 135 SMMLV = $175.500.000
-  const TOPE_CANON_MAX = TOPE_VIS * 0.01; // 1% de VIS = $1.755.000 / $2.360.000
+  const SMMLV_2026 = 1750905; // SMMLV de referencia actual: $1.750.905 COP
+  const MAX_SUB_ARRIENDO_MENSUAL = SMMLV_2026 * 0.6; // 0.6 SMMLV = $1.050.543 COP
+  const TOPE_VIS = SMMLV_2026 * 135; // 135 SMMLV = $236.372.175 COP
+  const TOPE_CANON_MAX = TOPE_VIS * 0.01; // 1% de VIS = $2.363.722 COP
 
   // Estado del Simulador
-  const [ingresos, setIngresos] = useState<number>(1800000);
-  const [canonPactado, setCanonPactado] = useState<number>(750000);
+  const [ingresos, setIngresos] = useState<number>(2200000);
+  const [canonPactado, setCanonPactado] = useState<number>(900000);
   const [esUrbana, setEsUrbana] = useState<boolean>(true);
 
   const smmlvCalculados = ingresos / SMMLV_2026;
@@ -70,8 +70,8 @@ export const SimuladorSubsidio: React.FC<{ onStartCenso: () => void }> = ({ onSt
 
                 <input
                   type="range"
-                  min={800000}
-                  max={4500000}
+                  min={1000000}
+                  max={5500000}
                   step={50000}
                   value={ingresos}
                   onChange={(e) => setIngresos(Number(e.target.value))}
@@ -79,9 +79,9 @@ export const SimuladorSubsidio: React.FC<{ onStartCenso: () => void }> = ({ onSt
                 />
 
                 <div className="flex justify-between text-[11px] font-bold text-slate-400">
-                  <span>$800.000 (Mínimo)</span>
+                  <span>$1.000.000</span>
                   <span>Tope 2 SMMLV ({formatCOP(SMMLV_2026 * 2)})</span>
-                  <span>$4.500.000</span>
+                  <span>$5.500.000</span>
                 </div>
 
                 {cumpleIngresos ? (
@@ -110,8 +110,8 @@ export const SimuladorSubsidio: React.FC<{ onStartCenso: () => void }> = ({ onSt
 
                 <input
                   type="range"
-                  min={350000}
-                  max={2500000}
+                  min={400000}
+                  max={3000000}
                   step={25000}
                   value={canonPactado}
                   onChange={(e) => setCanonPactado(Number(e.target.value))}
@@ -119,9 +119,9 @@ export const SimuladorSubsidio: React.FC<{ onStartCenso: () => void }> = ({ onSt
                 />
 
                 <div className="flex justify-between text-[11px] font-bold text-slate-400">
-                  <span>$350.000</span>
+                  <span>$400.000</span>
                   <span>Tope 1% VIS ({formatCOP(TOPE_CANON_MAX)})</span>
-                  <span>$2.500.000</span>
+                  <span>$3.000.000</span>
                 </div>
 
                 {excedeCanonTope && (

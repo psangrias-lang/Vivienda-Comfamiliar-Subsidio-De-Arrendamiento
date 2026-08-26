@@ -6,17 +6,17 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
     titulo: 'Subsidio de Arrendamiento Temporal',
     subtitulo: 'Aporte económico para canon de arrendamiento mensual por 6 meses',
     tag: 'Prioridad Gerencial',
-    montoMaximo: 'Hasta 0.6 SMMLV mensual ($780.000 COP aprox.)',
-    descripcion: 'Aporte transitorio otorgado por Comfamiliar Risaralda para hogares afiliados con ingresos menores o iguales a 2 SMMLV (Categoría A), cubriendo hasta el 90% del canon de arrendamiento en el perímetro urbano de Risaralda.',
+    montoMaximo: 'Hasta 0.6 SMMLV mensual ($1.050.543 COP aprox.)',
+    descripcion: 'Aporte transitorio otorgado por Comfamiliar Risaralda para hogares afiliados con ingresos menores o iguales a 2 SMMLV (Categoría A, hasta $3.501.810 COP), cubriendo hasta el 90% del canon de arrendamiento en el perímetro urbano de Risaralda.',
     dirigidoA: 'Hogares afiliados (persona sola o núcleo familiar) que no tengan vivienda propia y requieran apoyo temporal de arrendamiento por un término máximo de 6 meses continuos.',
     requisitosPrincipales: [
       'Afiliado al día: Dependientes (≥ 2 meses de aportes continuos), Pensionados 2% (≥ 12 meses continuos), Independientes 2% (≥ 12 meses de aportes).',
-      'Ingresos del grupo familiar menores o iguales a 2 SMMLV (Categoría A).',
+      'Ingresos del grupo familiar menores o iguales a 2 SMMLV (Categoría A: hasta $3.501.810 COP).',
       'No ser propietarios ni poseedores de vivienda en el territorio nacional.',
       'No haber sido beneficiario de subsidio familiar de vivienda antes.',
       'Conformación de hogar: Persona sola (soltero) o núcleo familiar consolidado (casado o unión libre).',
-      'Valor del subsidio: Hasta 0.6 SMMLV y en ningún caso superar el 90% del canon pactado con el propietario.',
-      'Vivienda urbana independiente, con servicios públicos de acueducto y energía, y canon ≤ 1% del tope VIS (135 SMMLV).'
+      'Valor del subsidio: Hasta 0.6 SMMLV ($1.050.543 COP/mes) y en ningún caso superar el 90% del canon pactado.',
+      'Vivienda urbana independiente, con servicios públicos de acueducto y energía, y canon ≤ 1% del tope VIS (135 SMMLV, máx. $2.363.722 COP).'
     ],
     documentosRequeridos: [
       'Formulario de postulación diligenciado + fotocopia legible y ampliada de cédulas de mayores de 18 años.',
@@ -34,12 +34,12 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
     titulo: 'Vivienda Nueva (VIS / VIP)',
     subtitulo: 'Adquisición de vivienda de interés social o prioritario',
     tag: 'Fondo FOVIS',
-    montoMaximo: 'Hasta 30 SMMLV ($39.000.000 aprox.)',
+    montoMaximo: 'Hasta 30 SMMLV ($52.527.150 COP aprox.)',
     descripcion: 'Aporte en dinero otorgado por una sola vez al hogar beneficiario, para facilitar la adquisición de una vivienda nueva de Interés Social (VIS) o de Interés Prioritario (VIP) en el departamento de Risaralda.',
-    dirigidoA: 'Hogares afiliados con ingresos totales menores a 4 SMMLV que no tengan vivienda propia en el territorio nacional.',
+    dirigidoA: 'Hogares afiliados con ingresos totales menores a 4 SMMLV ($7.003.620 COP) que no tengan vivienda propia en el territorio nacional.',
     requisitosPrincipales: [
       'Estar afiliado a Comfamiliar Risaralda (trabajador activo, independiente o pensionado aportante).',
-      'Ingresos del hogar no superiores a 4 Salarios Mínimos Mensuales Legales Vigentes (SMMLV).',
+      'Ingresos del hogar no superiores a 4 Salarios Mínimos Mensuales Legales Vigentes (hasta $7.003.620 COP).',
       'Ninguno de los integrantes del hogar postulante puede ser propietario de vivienda.',
       'No haber sido beneficiario de subsidio familiar de vivienda anteriormente.',
       'Contar con una cuenta de ahorro programado o cesantías inmovilizadas.',
@@ -60,7 +60,7 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
     titulo: 'Mejoramiento de Vivienda',
     subtitulo: 'Reparación estructural, cubiertas, pisos, baños y redes',
     tag: 'Fondo FOVIS',
-    montoMaximo: 'Hasta 11.5 SMMLV ($14.950.000 aprox.)',
+    montoMaximo: 'Hasta 11.5 SMMLV ($20.135.408 COP aprox.)',
     descripcion: 'Subsidio destinado a subsanar una o varias carencias básicas de la vivienda: saneamiento básico, pisos, cubiertas, reforzamiento estructural o adecuación de redes hidrosanitarias y eléctricas.',
     dirigidoA: 'Hogares afiliados propietarios de vivienda cuyas condiciones habitacionales o estructurales requieran intervención y mejoramiento prioritario.',
     requisitosPrincipales: [
@@ -68,7 +68,7 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
       'La vivienda no debe estar localizada en zonas de riesgo o servidumbre no mitigable.',
       'Estar al día con el impuesto predial unificado.',
       'Diagnóstico técnico o peritaje que justifique las obras de mejoramiento y seguridad.',
-      'Ingresos familiares menores a 4 SMMLV.'
+      'Ingresos familiares menores a 4 SMMLV ($7.003.620 COP).'
     ],
     documentosRequeridos: [
       'Certificado de Tradición y Libertad del inmueble objeto de mejora (< 30 días).',
@@ -85,7 +85,7 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
     titulo: 'Construcción en Sitio Propio',
     subtitulo: 'Edificación en lote o terraza propia',
     tag: 'Fondo FOVIS',
-    montoMaximo: 'Hasta 18 SMMLV ($23.400.000 aprox.)',
+    montoMaximo: 'Hasta 18 SMMLV ($31.516.290 COP aprox.)',
     descripcion: 'Modalidad orientada a la edificación de una solución habitacional sobre un lote, terraza o predio sin construir que pertenezca al postulante o a un miembro de su hogar.',
     dirigidoA: 'Familias propietarias de un terreno o terraza que requieran construir una vivienda digna y segura bajo norma sismorresistente NSR-10.',
     requisitosPrincipales: [
@@ -108,24 +108,24 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
 ];
 
 export const TOPES_INGRESOS_2026 = {
-  smmlv: 1300000,
+  smmlv: 1750905,
   catA: {
     nombre: 'Categoría A',
-    descripcion: 'Hogares con ingresos de 0 a 2 SMMLV (Hasta $2.600.000 COP)',
-    subsidioArrendamiento: 'Hasta 0.6 SMMLV mensual por 6 meses ($780.000/mes)',
-    subsidioMaximoVIS: 'Hasta 30 SMMLV ($39.000.000 COP)',
+    descripcion: 'Hogares con ingresos de 0 a 2 SMMLV (Hasta $3.501.810 COP)',
+    subsidioArrendamiento: 'Hasta 0.6 SMMLV mensual por 6 meses ($1.050.543/mes)',
+    subsidioMaximoVIS: 'Hasta 30 SMMLV ($52.527.150 COP)',
     prioridad: 'Aplica a Subsidio de Arrendamiento Temporal y máxima prioridad FOVIS'
   },
   catB: {
     nombre: 'Categoría B',
-    descripcion: 'Hogares con ingresos de 2 a 4 SMMLV (De $2.600.001 a $5.200.000 COP)',
+    descripcion: 'Hogares con ingresos de 2 a 4 SMMLV (De $3.501.811 a $7.003.620 COP)',
     subsidioArrendamiento: 'No aplica a Subsidio de Arrendamiento (exclusivo ≤ 2 SMMLV)',
-    subsidioMaximoVIS: 'Hasta 20 SMMLV ($26.000.000 COP)',
+    subsidioMaximoVIS: 'Hasta 20 SMMLV ($35.018.100 COP)',
     prioridad: 'Aplica a Vivienda Nueva, Mejoramiento y Construcción en Sitio Propio'
   },
   catC: {
     nombre: 'Categoría C',
-    descripcion: 'Hogares con ingresos superiores a 4 SMMLV',
+    descripcion: 'Hogares con ingresos superiores a 4 SMMLV (Más de $7.003.620 COP)',
     subsidioArrendamiento: 'No aplica para subsidios monetarios directos',
     subsidioMaximoVIS: 'No aplica para subsidio monetario directo FOVIS ordinario',
     prioridad: 'Acceso a líneas de Crédito de Vivienda y convenios de ahorro'
@@ -135,11 +135,11 @@ export const TOPES_INGRESOS_2026 = {
 export const PREGUNTAS_FRECUENTES_SUBSIDIO = [
   {
     pregunta: '¿Cuáles son los requisitos clave para acceder al Subsidio de Arrendamiento Temporal?',
-    respuesta: 'Según el Manual de Operación Gerencial de Comfamiliar Risaralda: 1) Estar afiliado al día (dependientes mínimo 2 meses continuos, pensionados 2% mínimo 12 meses, independientes 2% mínimo 12 meses); 2) Ingresos familiares menores o iguales a 2 SMMLV (Categoría A); 3) No ser propietarios ni poseedores de vivienda; 4) No haber recibido subsidio de vivienda previo; 5) Vivienda urbana independiente con canon ≤ 1% del tope VIS y servicios de acueducto y energía.'
+    respuesta: 'Según el Manual de Operación Gerencial de Comfamiliar Risaralda: 1) Estar afiliado al día (dependientes mínimo 2 meses continuos, pensionados 2% mínimo 12 meses, independientes 2% mínimo 12 meses); 2) Ingresos familiares menores o iguales a 2 SMMLV (Categoría A: hasta $3.501.810 COP); 3) No ser propietarios ni poseedores de vivienda; 4) No haber recibido subsidio de vivienda previo; 5) Vivienda urbana independiente con canon ≤ 1% del tope VIS (máx. $2.363.722 COP) y servicios de acueducto y energía.'
   },
   {
     pregunta: '¿Cuál es el monto máximo del subsidio de arrendamiento y por cuánto tiempo se otorga?',
-    respuesta: 'El subsidio otorga hasta 0.6 SMMLV mensual (aprox. $780.000 COP) por un término máximo de seis (6) meses continuos transitorios. En ningún caso el subsidio podrá superar el 90% del valor total del canon de arrendamiento pactado con el propietario en el contrato.'
+    respuesta: 'El subsidio otorga hasta 0.6 SMMLV mensual ($1.050.543 COP) por un término máximo de seis (6) meses continuos transitorios (hasta $6.303.258 COP en total). En ningún caso el subsidio podrá superar el 90% del valor total del canon de arrendamiento pactado con el propietario en el contrato.'
   },
   {
     pregunta: '¿Cómo participan las empresas aportantes en el censo y caracterización de sus colaboradores?',
@@ -147,7 +147,7 @@ export const PREGUNTAS_FRECUENTES_SUBSIDIO = [
   },
   {
     pregunta: '¿Qué condiciones debe cumplir el inmueble que voy a arrendar en Risaralda?',
-    respuesta: 'El inmueble debe: 1) Estar ubicado exclusivamente en el perímetro urbano de municipios de Risaralda; 2) Ser nuevo o usado en buen estado; 3) Certificado de Tradición y Libertad libre de embargos o limitaciones (solo se permite hipoteca de compra); 4) Ser una unidad independiente y habitable de inmediato; 5) Contar con servicios básicos de acueducto y energía en funcionamiento; 6) Canon mensual ≤ 1% del tope máximo VIS (135 SMMLV).'
+    respuesta: 'El inmueble debe: 1) Estar ubicado exclusivamente en el perímetro urbano de municipios de Risaralda; 2) Ser nuevo o usado en buen estado; 3) Certificado de Tradición y Libertad libre de embargos o limitaciones (solo se permite hipoteca de compra); 4) Ser una unidad independiente y habitable de inmediato; 5) Contar con servicios básicos de acueducto y energía en funcionamiento; 6) Canon mensual ≤ 1% del tope máximo VIS de 135 SMMLV ($2.363.722 COP).'
   },
   {
     pregunta: '¿Qué documentos se deben presentar para legalizar el subsidio de arrendamiento?',
