@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+}
+
+/* Comfamiliar Risaralda Palette: Azul Institucional, Dorado Real y Blanco */
+:root {
+  --comfamiliar-blue-dark: #002D62;
+  --comfamiliar-blue: #003B70;
+  --comfamiliar-blue-light: #0A58A2;
+  --comfamiliar-gold: #D4AF37;
+  --comfamiliar-gold-dark: #B8860B;
+  --comfamiliar-gold-light: #F7D070;
+  --comfamiliar-accent-blue: #0C2340;
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Clases utilitarias de colores dorados y azules Comfamiliar */
+.bg-comfamiliar-blue {
+  background-color: #003B70;
+}
+.bg-comfamiliar-dark {
+  background-color: #002447;
+}
+.bg-comfamiliar-gold {
+  background-color: #D4AF37;
+}
+.text-comfamiliar-blue {
+  color: #003B70;
+}
+.text-comfamiliar-gold {
+  color: #C59B27;
+}
+.border-comfamiliar-gold {
+  border-color: #D4AF37;
+}
