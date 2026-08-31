@@ -21,10 +21,10 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
     documentosRequeridos: [
       'Formulario de postulación diligenciado + fotocopia legible y ampliada de cédulas de mayores de 18 años.',
       'Registro civil de nacimiento de cada menor integrante del grupo familiar.',
-      'Certificados de ingresos: Laboral < 30 días (dependientes), Certificación contador + TP + antecedentes JCC < 30 días (independientes), o último desprendible de pensión (pensionados).',
+      'Certificados de ingresos: Laboral no mayor a 30 días (dependientes), Certificación contador + TP + antecedentes JCC no mayor a 30 días (independientes), o último desprendible de pensión (pensionados).',
       'Estado civil: Solteros (ninguno), Casados (registro civil de matrimonio), Unión de hecho (escritura, sentencia o acta conciliación), Divorciados (registro civil con nota de liquidación sociedad conyugal).',
       'Certificación médica EPS en caso de miembros con discapacidad.',
-      'Vivienda: Certificado de Tradición y Libertad (< 30 días), Impuesto Predial del año actual cancelado, Identificación del propietario y Formato de Solicitud de Arrendamiento.'
+      'Vivienda: Certificado de Tradición y Libertad (no mayor a 30 días), Impuesto Predial del año actual cancelado, Identificación del propietario y Formato de Solicitud de Arrendamiento.'
     ],
     icono: 'KeyRound',
     colorTheme: 'amber'
@@ -74,7 +74,7 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
       'Ingresos familiares menores o iguales a 4 SMMLV ($7.003.620 COP).'
     ],
     documentosRequeridos: [
-      'Certificado de Tradición y Libertad del inmueble objeto de mejora (< 30 días).',
+      'Certificado de Tradición y Libertad del inmueble objeto de mejora (no mayor a 30 días).',
       'Fotocopia del impuesto predial cancelado del año en curso.',
       'Diagnóstico de vulnerabilidad o afectación (acta de visita técnica de DIGER/CMGRD si aplica).',
       'Presupuesto detallado de las mejoras firmado por maestro/ingeniero.',
@@ -156,7 +156,7 @@ export const PREGUNTAS_FRECUENTES_SUBSIDIO = [
   },
   {
     pregunta: '¿Qué documentos se deben presentar para legalizar el subsidio de arrendamiento?',
-    respuesta: 'Por el Hogar: Formulario de postulación diligenciado, fotocopia de cédulas de mayores de 18 años, registro civil de menores, certificado de ingresos (laboral < 30 días, contador para independientes o desprendible de pensión), documentos de estado civil (matrimonio, unión de hecho o divorcio si aplica) y certificado médico EPS por discapacidad. Por la Vivienda: Certificado de Tradición (< 30 días), Impuesto Predial del año actual cancelado, copia de cédula del arrendador (o Cámara de Comercio) y Formato de Solicitud de Arrendamiento.'
+    respuesta: 'Por el Hogar: Formulario de postulación diligenciado, fotocopia de cédulas de mayores de 18 años, registro civil de menores, certificado de ingresos (laboral no mayor a 30 días, contador para independientes con vigencia no mayor a 30 días o desprendible de pensión), documentos de estado civil (matrimonio, unión de hecho o divorcio si aplica) y certificado médico EPS por discapacidad. Por la Vivienda: Certificado de Tradición (no mayor a 30 días), Impuesto Predial del año actual cancelado, copia de cédula del arrendador (o Cámara de Comercio) y Formato de Solicitud de Arrendamiento.'
   },
   {
     pregunta: '¿Tiene algún costo la postulación al subsidio o el censo en Comfamiliar Risaralda?',

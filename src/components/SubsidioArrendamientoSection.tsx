@@ -340,8 +340,8 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
                     <tr>
                       <td className="px-5 py-4 font-bold text-[#003B70]">Ingresos por Tipo</td>
                       <td className="px-5 py-4 space-y-1">
-                        <div>• <strong>Dependientes:</strong> Certificado laboral &lt; 30 días de quienes laboren.</div>
-                        <div>• <strong>Independientes:</strong> Certificación de contador público + tarjeta profesional + antecedentes disciplinarios JCC &lt; 30 días.</div>
+                        <div>• <strong>Dependientes:</strong> Certificado laboral no mayor a 30 días de quienes laboren.</div>
+                        <div>• <strong>Independientes:</strong> Certificación de contador público + tarjeta profesional + antecedentes disciplinarios JCC (expedición no mayor a 30 días).</div>
                         <div>• <strong>Pensionados:</strong> Fotocopia del último desprendible de pago de pensión.</div>
                       </td>
                     </tr>
