@@ -135,7 +135,7 @@ export const ModalExitoRadicado: React.FC<ModalExitoRadicadoProps> = ({
               <ShieldCheck className="w-4 h-4 text-amber-700" />
               ¿Qué pasos siguen a continuación?
             </strong>
-            <p>1. Nuestro equipo de Vivienda Comfamiliar revisará el cumplimiento de aportes (&ge; 2 meses dependiente / &ge; 12 meses independiente) y cruce con bases de datos.</p>
+            <p>1. Nuestro equipo de Vivienda Comfamiliar revisará el cumplimiento de aportes (mínimo 2 meses dependiente / mínimo 12 meses independiente) y cruce con bases de datos.</p>
             <p>2. Se programará una <strong>visita domiciliaria</strong> para validar las condiciones de habitabilidad de la vivienda urbana a arrendar.</p>
             <p>3. Puedes consultar el estado en cualquier momento con tu cédula en el botón de consulta superior.</p>
           </div>

@@ -107,8 +107,8 @@ export const Paso1Identificacion: React.FC<Paso1Props> = ({
             onChange={(e) => updateFormData({ estadoAfiliacion: e.target.value as EstadoAfiliacion })}
             className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-medium focus:ring-2 focus:ring-[#003B70] focus:border-[#003B70] outline-none transition-all"
           >
-            <option value="Afiliado activo trabajador">Afiliado activo trabajador dependiente (&ge; 2 meses)</option>
-            <option value="Afiliado independiente/pensionado">Afiliado independiente o pensionado aportante (&ge; 12 meses)</option>
+            <option value="Afiliado activo trabajador">Afiliado activo trabajador dependiente (mínimo 2 meses de aportes)</option>
+            <option value="Afiliado independiente/pensionado">Afiliado independiente o pensionado aportante (mínimo 12 meses de aportes)</option>
             <option value="Beneficiario de afiliado">Beneficiario del núcleo familiar de un afiliado</option>
             <option value="No afiliado / Comunidad general">Damnificado comunidad general / No afiliado</option>
           </select>
@@ -124,9 +124,9 @@ export const Paso1Identificacion: React.FC<Paso1Props> = ({
             onChange={(e) => updateFormData({ categoriaAfiliacion: e.target.value as CategoriaAfiliacion })}
             className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-medium focus:ring-2 focus:ring-[#003B70] focus:border-[#003B70] outline-none transition-all"
           >
-            <option value="Cat A (Hasta 2 SMMLV)">Cat A (Hasta 2 SMMLV - Hasta $2.600.000) - Prioridad Arrendamiento</option>
-            <option value="Cat B (De 2 a 4 SMMLV)">Cat B (De 2 a 4 SMMLV - Hasta $5.200.000)</option>
-            <option value="Cat C (Más de 4 SMMLV)">Cat C (Más de 4 SMMLV)</option>
+            <option value="Cat A (Hasta 2 SMMLV)">Cat A (Hasta 2 SMMLV - Hasta $3.501.810) - Prioridad Arrendamiento</option>
+            <option value="Cat B (De 2 a 4 SMMLV)">Cat B (De 2 a 4 SMMLV - De $3.501.811 a $7.003.620)</option>
+            <option value="Cat C (Más de 4 SMMLV)">Cat C (Más de 4 SMMLV - Más de $7.003.620)</option>
             <option value="No sabe / Por verificar">No sabe / Por verificar en sistema</option>
           </select>
         </div>

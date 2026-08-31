@@ -9,15 +9,20 @@ import { SubsidiosSection } from './components/SubsidiosSection';
 import { RequisitosAccordion } from './components/RequisitosAccordion';
 import { MultiStepCenso } from './components/CensoForm/MultiStepCenso';
 import { AdminDashboard } from './components/AdminDashboard';
+import { AdminLogin } from './components/AdminLogin';
 import { PortalEmpresas } from './components/PortalEmpresas';
 import { ConsultaRadicadoModal } from './components/ConsultaRadicadoModal';
 import { Footer } from './components/Footer';
 
 const STORAGE_KEY = 'censo_vivienda_comfamiliar_records_v2';
+const ADMIN_AUTH_KEY = 'fovis_admin_session_auth';
 
 export function App() {
   const [activeTab, setActiveTab] = useState<'portal' | 'censo' | 'admin' | 'empresas'>('portal');
   const [isConsultaOpen, setIsConsultaOpen] = useState(false);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState<boolean>(() => {
+    return sessionStorage.getItem(ADMIN_AUTH_KEY) === 'true';
+  });
 
   // Inicializar estado con LocalStorage o datos iniciales
   const [censos, setCensos] = useState<CensoRegistro[]>(() => {
@@ -87,6 +92,24 @@ export function App() {
     }, 100);
   };
 
+  const handleAdminLoginSuccess = () => {
+    setIsAdminAuthenticated(true);
+    setActiveTab('admin');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleAdminLogout = () => {
+    sessionStorage.removeItem(ADMIN_AUTH_KEY);
+    setIsAdminAuthenticated(false);
+    setActiveTab('portal');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenAdminAccess = () => {
+    setActiveTab('admin');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans selection:bg-amber-400 selection:text-slate-950">
       
@@ -95,7 +118,6 @@ export function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         onOpenConsulta={() => setIsConsultaOpen(true)}
-        totalCensos={censos.length}
       />
 
       {/* Contenido Principal según Pestaña Activa */}
@@ -149,20 +171,34 @@ export function App() {
         )}
 
         {activeTab === 'admin' && (
-          <AdminDashboard
-            censos={censos}
-            onUpdateStatus={handleUpdateStatus}
-            onResetSampleData={handleResetSampleData}
-            onBackToPortal={() => {
-              setActiveTab('portal');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          />
+          isAdminAuthenticated ? (
+            <AdminDashboard
+              censos={censos}
+              onUpdateStatus={handleUpdateStatus}
+              onResetSampleData={handleResetSampleData}
+              onBackToPortal={() => {
+                setActiveTab('portal');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              onLogout={handleAdminLogout}
+            />
+          ) : (
+            <AdminLogin
+              onLoginSuccess={handleAdminLoginSuccess}
+              onCancel={() => {
+                setActiveTab('portal');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            />
+          )
         )}
       </main>
 
       {/* Footer Institucional */}
-      <Footer onStartCenso={handleStartCenso} />
+      <Footer 
+        onStartCenso={handleStartCenso} 
+        onOpenAdmin={handleOpenAdminAccess}
+      />
 
       {/* Modal Consulta de Radicado */}
       <ConsultaRadicadoModal

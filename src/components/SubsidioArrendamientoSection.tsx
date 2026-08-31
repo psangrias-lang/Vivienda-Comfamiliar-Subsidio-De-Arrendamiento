@@ -37,7 +37,7 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
 
             <div className="pt-3 flex flex-wrap items-center gap-3 text-xs sm:text-sm font-bold text-slate-200">
               <span className="bg-white/10 px-3 py-1.5 rounded-xl border border-white/15">
-                Ingresos: &le; 2 SMMLV (Categoría A)
+                Ingresos menores a 2 SMMLV (Categoría A)
               </span>
               <span className="bg-amber-400/20 text-amber-300 px-3 py-1.5 rounded-xl border border-amber-400/30">
                 Valor: Hasta 0.6 SMMLV Mensual
@@ -55,11 +55,8 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
         {/* 1. REQUISITOS, VALOR Y DURACIÓN (Slide 2 del Manual) */}
         <div>
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <span className="text-xs font-black uppercase tracking-widest text-[#003B70] bg-blue-100 px-3 py-1 rounded-full">
+            <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
               Requisitos, Valor y Duración
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
-              Postulación exige ingresos menores a 2 SMMLV, con subsidio de 0.6 SMMLV por 6 meses
             </h3>
           </div>
 
@@ -81,9 +78,9 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
                       1. Afiliado Comfamiliar Risaralda al día:
                     </strong>
                     <ul className="space-y-1 text-slate-600 pl-2">
-                      <li>• <strong>Dependientes:</strong> &ge; 2 meses de aportes continuos.</li>
-                      <li>• <strong>Pensionados 2%:</strong> &ge; 12 meses continuos.</li>
-                      <li>• <strong>Independientes 2%:</strong> &ge; 12 meses de aportes.</li>
+                      <li>• <strong>Dependientes:</strong> Mínimo 2 meses de aportes continuos.</li>
+                      <li>• <strong>Pensionados 2%:</strong> Mínimo 12 meses continuos.</li>
+                      <li>• <strong>Independientes 2%:</strong> Mínimo 12 meses de aportes.</li>
                     </ul>
                   </div>
 
@@ -197,11 +194,8 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
               Condiciones de la Vivienda
             </span>
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
-              La vivienda seleccionada debe ser urbana, independiente y tener un canon menor al 1% del tope VIS
+              La vivienda a postular en Pereira, Dosquebradas o municipios de Risaralda debe cumplir unos requisitos para ser aprobada.
             </h3>
-            <p className="text-sm text-slate-600 mt-2">
-              Requisitos que debe cumplir el inmueble en Pereira, Dosquebradas o municipios de Risaralda para ser aprobado.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -266,9 +260,9 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
               <div className="w-10 h-10 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-sm mb-4">
                 6
               </div>
-              <h4 className="text-base font-black text-[#003B70]">6. Tope Máximo del Canon</h4>
+              <h4 className="text-base font-black text-[#003B70]">6. Canon Máximo Permitido</h4>
               <p className="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
-                El canon de arrendamiento mensual <strong>no debe superar el 1% del tope máximo de la VIS (135 SMMLV)</strong>. Para el año en curso: canon &le; $2.363.722 COP.
+                El canon de arrendamiento mensual <strong>no debe superar el 1% del tope máximo de la VIS (135 SMMLV)</strong>. Para el año en curso: canon hasta $2.363.722 COP.
               </p>
             </div>
 

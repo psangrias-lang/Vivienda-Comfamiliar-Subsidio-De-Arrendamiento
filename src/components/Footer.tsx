@@ -1,8 +1,13 @@
 import React from 'react';
 import { ComfamiliarLogo } from './ComfamiliarLogo';
-import { MapPin, Phone, Mail, Clock, ShieldCheck, KeyRound } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck, KeyRound, Lock } from 'lucide-react';
 
-export const Footer: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso }) => {
+interface FooterProps {
+  onStartCenso: () => void;
+  onOpenAdmin?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onStartCenso, onOpenAdmin }) => {
   return (
     <footer id="contacto" className="bg-[#002447] text-slate-300 pt-16 pb-12 border-t-2 border-amber-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,21 +29,26 @@ export const Footer: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso })
                 className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 text-xs font-black flex items-center justify-center gap-2 transition-all shadow-md uppercase tracking-wider"
               >
                 <KeyRound className="w-4 h-4 text-slate-950" />
-                <span>Postular a Subsidio Arrendamiento</span>
+                <span>Postular al Subsidio</span>
               </button>
             </div>
           </div>
 
-          {/* Col 2: Sedes y Puntos de Atención */}
+          {/* Col 2: Sedes Principales */}
           <div className="space-y-3">
             <h4 className="text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
               <MapPin className="w-4 h-4 text-amber-400" />
-              <span>Sedes en Risaralda</span>
+              <span>Sedes y Atención</span>
             </h4>
             
             <div className="space-y-2.5 text-xs text-slate-300">
               <div className="p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700">
                 <strong className="text-white block font-bold">Sede Principal Pereira:</strong>
+                <span>Avenida Circunvalar # 3-01</span>
+              </div>
+
+              <div className="p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700">
+                <strong className="text-white block font-bold">Edificio Centro:</strong>
                 <span>Calle 22 # 4-40 (Edificio Administrativo)</span>
               </div>
 
@@ -64,7 +74,7 @@ export const Footer: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso })
             <div className="space-y-2.5 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>PBX Pereira: <strong>(606) 3135600</strong> Ext. 2480 - 2485</span>
+                <span>PBX Pereira: <strong>(606) 3135700 opción 2</strong> (Ext. 2480 - 2485)</span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -97,8 +107,12 @@ export const Footer: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso })
 
             <div className="text-xs text-slate-300 space-y-2">
               <p>
-                <strong className="text-white block font-bold">Lunes a Viernes:</strong>
-                7:30 a.m. a 12:00 m. y 1:30 p.m. a 5:30 p.m.
+                <strong className="text-white block font-bold">Lunes a Jueves:</strong>
+                8:00 a.m. a 12:00 m. y 1:00 p.m. a 4:00 p.m.
+              </p>
+              <p>
+                <strong className="text-white block font-bold">Viernes:</strong>
+                8:00 a.m. a 12:00 m. y 1:00 p.m. a 3:45 p.m.
               </p>
               <p>
                 <strong className="text-white block font-bold">Atención Virtual:</strong>
@@ -119,7 +133,7 @@ export const Footer: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso })
           <p>© 2026 Caja de Compensación Familiar de Risaralda - Comfamiliar Risaralda. Todos los derechos reservados.</p>
           <div className="flex flex-wrap items-center gap-4">
             <a 
-              href="https://script.google.com/macros/s/AKfycbwdu_91EqZPHaLpMtfK5aVBD_IvyqFqY12oZWkT5X7vKlWiJQIVu17UDBSTmYQlYxwu/exec" 
+              href="https://script.google.com/a/macros/comfamiliar.com/s/AKfycbw_qwM8cFFdtUw035AIuGP875I-yWtRJ0sJs4IA9ctSlAGrJ3BMJf-x56CGVcQuK-j4/exec" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-amber-300 hover:text-white font-bold underline"
@@ -130,6 +144,20 @@ export const Footer: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso })
             <span className="hover:text-white cursor-pointer">Manual de Operación Gerencial</span>
             <span>•</span>
             <span className="hover:text-white cursor-pointer">Habeas Data (Ley 1581)</span>
+            
+            {onOpenAdmin && (
+              <>
+                <span>•</span>
+                <button
+                  onClick={onOpenAdmin}
+                  className="text-slate-400 hover:text-amber-300 transition-colors flex items-center gap-1 cursor-pointer font-medium"
+                  title="Acceso restringido para funcionarios de Comfamiliar Risaralda"
+                >
+                  <Lock className="w-3 h-3 text-amber-400/80" />
+                  <span>Acceso Funcionarios</span>
+                </button>
+              </>
+            )}
           </div>
         </div>
 

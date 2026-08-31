@@ -137,12 +137,19 @@ export const MultiStepCenso: React.FC<MultiStepCensoProps> = ({
     window.scrollTo({ top: 120, behavior: 'smooth' });
   };
 
+  const GOOGLE_SCRIPT_ENDPOINT = 
+    'https://script.google.com/a/macros/comfamiliar.com/s/AKfycbw_qwM8cFFdtUw035AIuGP875I-yWtRJ0sJs4IA9ctSlAGrJ3BMJf-x56CGVcQuK-j4/exec';
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateStep(4)) return;
 
     const randomSuffix = Math.floor(1000 + Math.random() * 9000);
     const radicadoId = `RAD-ARR-2026-${randomSuffix}`;
+    const timestampFormatted = new Date().toLocaleString('es-CO', {
+      day: '2-digit', month: '2-digit', year: 'numeric',
+      hour: '2-digit', minute: '2-digit', second: '2-digit'
+    });
 
     const nuevoRegistro: CensoRegistro = {
       ...formData,
@@ -150,6 +157,43 @@ export const MultiStepCenso: React.FC<MultiStepCensoProps> = ({
       fechaRegistro: new Date().toISOString(),
       estadoAtencion: formData.requiereEvacuacionInmediata ? 'Priorizado para Subsidio' : 'En Verificación Técnica',
     };
+
+    // Sincronización en segundo plano con Google Sheets oficial
+    try {
+      const payload = {
+        marcaTemporal: timestampFormatted,
+        numeroRadicado: radicadoId,
+        tipoDoc: formData.tipoDocumento,
+        numeroDocumento: formData.numeroDocumento,
+        nombreCompleto: formData.nombresApellidos,
+        categoriaAfiliacion: formData.categoriaAfiliacion,
+        empresaAportante: formData.empresaDondeLabora || 'Particular / Independiente',
+        telefonoCelular: formData.telefonoCelular,
+        whatsapp: formData.telefonoWhatsapp,
+        correoElectronico: formData.correoElectronico,
+        municipio: formData.municipio,
+        barrioVereda: formData.barrioVereda,
+        direccionExacta: formData.direccionExacta,
+        tenenciaInmueble: formData.tenenciaInmueble,
+        nivelDanio: formData.nivelDanio,
+        requiereArriendoTemporal: formData.requiereEvacuacionInmediata ? 'SÍ' : 'NO',
+        actaDIGER: formData.numeroActaDIGER ? `Sí (${formData.numeroActaDIGER})` : formData.estadoVisitaDIGER,
+        personasAfectadas: formData.habitantesAfectados,
+        poblacionVulnerable: formData.hayMenoresOAdultosMayores ? 'SÍ' : 'NO',
+        descripcionDanios: formData.descripcionDanios,
+        estadoRevision: 'Pendiente Diagnóstico',
+        observacionesTecnicas: formData.puntoReferencia ? `Punto Ref: ${formData.puntoReferencia}` : ''
+      };
+
+      fetch(GOOGLE_SCRIPT_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }).catch((err) => console.log('Envío en segundo plano a Google Sheets:', err));
+    } catch (err) {
+      console.log('Error intentando enviar a Google Script:', err);
+    }
 
     onSaveRegistro(nuevoRegistro);
     setRegistroExitoso(nuevoRegistro);

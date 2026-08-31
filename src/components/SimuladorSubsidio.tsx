@@ -87,7 +87,7 @@ export const SimuladorSubsidio: React.FC<{ onStartCenso: () => void }> = ({ onSt
                 {cumpleIngresos ? (
                   <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-xs text-[#003B70] font-semibold flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
-                    <span>Cumple con el requisito de ingresos: <strong>{smmlvCalculados.toFixed(2)} SMMLV (&le; 2 SMMLV)</strong>.</span>
+                    <span>Cumple con el requisito de ingresos: <strong>{smmlvCalculados.toFixed(2)} SMMLV (hasta 2 SMMLV)</strong>.</span>
                   </div>
                 ) : (
                   <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 font-semibold flex items-center gap-2">

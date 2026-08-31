@@ -44,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   Censo y Asignación de Subsidio de Arrendamiento por Emergencia
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-200 mt-0.5 max-w-3xl">
-                  Si tu vivienda en Pereira, Dosquebradas, Santa Rosa o municipios de Risaralda resultó averiada o cuenta con orden de evacuación, postúlate al Subsidio de Arrendamiento Temporal (0.6 SMMLV por 6 meses).
+                  Si tu vivienda en Pereira, Dosquebradas, Santa Rosa o municipios de Risaralda resultó averiada o cuenta con orden de evacuación, postúlate al Subsidio de Arrendamiento Temporal.
                 </p>
               </div>
             </div>
@@ -144,8 +144,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <DollarSign className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-xs sm:text-sm">Ingresos del Hogar &le; 2 SMMLV</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Dirigido prioritariamente a afiliados en Categoría A.</p>
+                    <h4 className="font-bold text-white text-xs sm:text-sm">Ingresos menores a 2 SMMLV (Categoría A)</h4>
+                    <p className="text-xs text-slate-400 mt-0.5">Dirigido prioritariamente a afiliados con ingresos de hasta $3.501.810 COP.</p>
                   </div>
                 </div>
 
@@ -164,8 +164,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <Building className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-xs sm:text-sm">Canon Máximo: &le; 1% VIS</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Vivienda urbana independiente en el departamento de Risaralda.</p>
+                    <h4 className="font-bold text-white text-xs sm:text-sm">Canon Máximo Permitido</h4>
+                    <p className="text-xs text-slate-400 mt-0.5">Hasta $2.363.722 COP mensuales (Tope legal para vivienda en arriendo).</p>
                   </div>
                 </div>
 

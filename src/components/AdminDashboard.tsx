@@ -3,7 +3,7 @@ import type { CensoRegistro, NivelDanio } from '../types/censo';
 import { MUNICIPIOS_RISARALDA } from '../data/risaraldaMunicipios';
 import { 
   Search, Eye, 
-  MapPin, Building2, User, X, RefreshCw, FileSpreadsheet, KeyRound
+  MapPin, Building2, User, X, RefreshCw, FileSpreadsheet, KeyRound, LogOut
 } from 'lucide-react';
 
 import { ComfamiliarLogo } from './ComfamiliarLogo';
@@ -13,6 +13,7 @@ interface AdminDashboardProps {
   onUpdateStatus: (id: string, newStatus: CensoRegistro['estadoAtencion']) => void;
   onResetSampleData: () => void;
   onBackToPortal: () => void;
+  onLogout: () => void;
 }
 
 export const AdminDashboard: React.FC<AdminDashboardProps> = ({
@@ -20,6 +21,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   onUpdateStatus,
   onResetSampleData,
   onBackToPortal,
+  onLogout,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterMunicipio, setFilterMunicipio] = useState('todos');
@@ -172,9 +174,18 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
             <button
               onClick={onBackToPortal}
-              className="px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 transition-colors"
+              className="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-colors cursor-pointer"
             >
               Ver Portal
+            </button>
+
+            <button
+              onClick={onLogout}
+              className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+              title="Cerrar sesión de Administrador"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span>Cerrar Sesión</span>
             </button>
           </div>
         </div>
@@ -206,7 +217,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
           <div className="bg-white rounded-3xl p-5 border-2 border-slate-200 shadow-sm flex items-center justify-between">
             <div>
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Hogares Cat A (&le; 2 SMMLV)</span>
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Hogares Cat A (Hasta 2 SMMLV)</span>
               <div className="text-2xl sm:text-3xl font-black text-[#003B70] mt-1">{casosCatA}</div>
               <span className="text-[11px] text-[#003B70] font-bold">Prioridad Manual Gerencial</span>
             </div>

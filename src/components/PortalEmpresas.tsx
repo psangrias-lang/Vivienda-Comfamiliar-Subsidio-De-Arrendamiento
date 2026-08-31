@@ -29,7 +29,8 @@ interface ColaboradorRespuesta {
   autorizaEmpresa: boolean;
 }
 
-const OFICIAL_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwdu_91EqZPHaLpMtfK5aVBD_IvyqFqY12oZWkT5X7vKlWiJQIVu17UDBSTmYQlYxwu/exec';
+const OFICIAL_SCRIPT_URL = 
+  'https://script.google.com/a/macros/comfamiliar.com/s/AKfycbw_qwM8cFFdtUw035AIuGP875I-yWtRJ0sJs4IA9ctSlAGrJ3BMJf-x56CGVcQuK-j4/exec';
 
 const EMPRESAS_PREDEFINIDAS: EmpresaRegistrada[] = [
   {
