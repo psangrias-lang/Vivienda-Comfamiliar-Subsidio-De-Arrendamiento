@@ -20,13 +20,13 @@ export const Footer: React.FC<FooterProps> = ({ onStartCenso, onOpenAdmin }) => 
             <ComfamiliarLogo variant="light" withSubtitle={true} />
 
             <p className="text-xs text-slate-300 leading-relaxed">
-              Fondo de Vivienda de Interés Social (FOVIS). Comprometidos con el bienestar integral, la asignación del Subsidio de Arrendamiento Temporal y la solución habitacional de las familias de Risaralda.
+              Vivienda Comfamiliar Risaralda. Comprometidos con el bienestar integral, la asignación del Subsidio de Arrendamiento Temporal y la solución habitacional de las familias de Risaralda.
             </p>
 
             <div className="pt-2">
               <button
                 onClick={onStartCenso}
-                className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 text-xs font-black flex items-center justify-center gap-2 transition-all shadow-md uppercase tracking-wider"
+                className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 text-xs font-black flex items-center justify-center gap-2 transition-all shadow-md uppercase tracking-wider cursor-pointer"
               >
                 <KeyRound className="w-4 h-4 text-slate-950" />
                 <span>Postular al Subsidio</span>
@@ -38,28 +38,13 @@ export const Footer: React.FC<FooterProps> = ({ onStartCenso, onOpenAdmin }) => 
           <div className="space-y-3">
             <h4 className="text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
               <MapPin className="w-4 h-4 text-amber-400" />
-              <span>Sedes y Atención</span>
+              <span>Sede de Atención</span>
             </h4>
             
             <div className="space-y-2.5 text-xs text-slate-300">
-              <div className="p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700">
-                <strong className="text-white block font-bold">Sede Principal Pereira:</strong>
-                <span>Avenida Circunvalar # 3-01</span>
-              </div>
-
-              <div className="p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700">
-                <strong className="text-white block font-bold">Edificio Centro:</strong>
-                <span>Calle 22 # 4-40 (Edificio Administrativo)</span>
-              </div>
-
-              <div className="p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700">
-                <strong className="text-white block font-bold">Sede Dosquebradas:</strong>
+              <div className="p-3 rounded-2xl bg-slate-800/80 border border-slate-700">
+                <strong className="text-white block font-bold mb-0.5">Sede Dosquebradas:</strong>
                 <span>Avenida Simón Bolívar # 35-02</span>
-              </div>
-
-              <div className="p-2.5 rounded-2xl bg-slate-800/80 border border-slate-700">
-                <strong className="text-white block font-bold">Sede Santa Rosa de Cabal:</strong>
-                <span>Carrera 14 # 17-57</span>
               </div>
             </div>
           </div>
@@ -74,25 +59,13 @@ export const Footer: React.FC<FooterProps> = ({ onStartCenso, onOpenAdmin }) => 
             <div className="space-y-2.5 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>PBX Pereira: <strong>(606) 3135700 opción 2</strong> (Ext. 2480 - 2485)</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>Línea Gratuita Nacional: <strong>01 8000 910091</strong></span>
+                <span>PBX Pereira: <strong>(606) 3135700 opción 2</strong></span>
               </div>
 
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <a href="mailto:vivienda@comfamiliar.com" className="hover:text-amber-300 transition-colors">
+                <a href="mailto:vivienda@comfamiliar.com" className="hover:text-amber-300 transition-colors font-medium">
                   vivienda@comfamiliar.com
-                </a>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <a href="mailto:fovis@comfamiliar.com" className="hover:text-amber-300 transition-colors">
-                  fovis@comfamiliar.com
                 </a>
               </div>
             </div>
