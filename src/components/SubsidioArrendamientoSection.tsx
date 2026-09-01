@@ -5,12 +5,10 @@ import {
 } from 'lucide-react';
 
 interface SubsidioArrendamientoSectionProps {
-  onStartPostulacion: () => void;
+  onStartPostulacion?: () => void;
 }
 
-export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSectionProps> = ({
-  onStartPostulacion,
-}) => {
+export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSectionProps> = () => {
   const [activeTabDoc, setActiveTabDoc] = useState<'hogar' | 'vivienda'>('hogar');
 
   return (
@@ -174,14 +172,6 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
                 </div>
               </div>
 
-              <div className="mt-6 pt-3">
-                <button
-                  onClick={onStartPostulacion}
-                  className="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md transition-all"
-                >
-                  Postularme Ahora
-                </button>
-              </div>
             </div>
 
           </div>

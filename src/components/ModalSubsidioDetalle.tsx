@@ -1,17 +1,16 @@
 import React from 'react';
 import type { ModalidadSubsidio } from '../types/censo';
-import { X, CheckCircle2, FileText, ArrowRight, Download, ShieldCheck } from 'lucide-react';
+import { X, CheckCircle2, FileText, Download, ShieldCheck } from 'lucide-react';
 
 interface ModalSubsidioDetalleProps {
   modalidad: ModalidadSubsidio;
   onClose: () => void;
-  onStartCenso: () => void;
+  onStartCenso?: () => void;
 }
 
 export const ModalSubsidioDetalle: React.FC<ModalSubsidioDetalleProps> = ({
   modalidad,
   onClose,
-  onStartCenso,
 }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/75 backdrop-blur-sm animate-fade-in">
@@ -101,21 +100,17 @@ export const ModalSubsidioDetalle: React.FC<ModalSubsidioDetalleProps> = ({
         <div className="sticky bottom-0 bg-slate-50 px-6 py-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
           <button
             onClick={() => window.print()}
-            className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-white transition-colors"
+            className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-white transition-colors cursor-pointer"
           >
             <Download className="w-4 h-4 text-[#003B70]" />
-            <span>Descargar Ficha PDF</span>
+            <span>Descargar Ficha Informativa (PDF)</span>
           </button>
 
           <button
-            onClick={() => {
-              onClose();
-              onStartCenso();
-            }}
-            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 text-xs font-black flex items-center justify-center gap-2 shadow-md uppercase tracking-wider"
+            onClick={onClose}
+            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-bold transition-all cursor-pointer"
           >
-            <span>Postularme Ahora</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Cerrar</span>
           </button>
         </div>
 

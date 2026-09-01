@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Calculator, CheckCircle2, AlertTriangle, KeyRound, ArrowRight } from 'lucide-react';
+import { Calculator, CheckCircle2, AlertTriangle, KeyRound } from 'lucide-react';
 
-export const SimuladorSubsidio: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso }) => {
+export const SimuladorSubsidio: React.FC<{ onStartCenso?: () => void }> = () => {
   const SMMLV_2026 = 1750905; // SMMLV de referencia actual: $1.750.905 COP
   const MAX_SUB_ARRIENDO_MENSUAL = SMMLV_2026 * 0.6; // 0.6 SMMLV = $1.050.543 COP
   const TOPE_VIS = SMMLV_2026 * 135; // 135 SMMLV = $236.372.175 COP
@@ -205,16 +205,6 @@ export const SimuladorSubsidio: React.FC<{ onStartCenso: () => void }> = ({ onSt
                   <div>• <strong>Tope 0.6 SMMLV:</strong> Máximo {formatCOP(MAX_SUB_ARRIENDO_MENSUAL)} al mes.</div>
                   <div>• <strong>Tope 90% Canon:</strong> El subsidio nunca superará el 90% del valor pactado en el contrato.</div>
                 </div>
-              </div>
-
-              <div className="pt-6">
-                <button
-                  onClick={onStartCenso}
-                  className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-xl shadow-amber-500/20 transition-all hover:scale-[1.02]"
-                >
-                  <span>Postularme con estos Datos</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
               </div>
 
             </div>

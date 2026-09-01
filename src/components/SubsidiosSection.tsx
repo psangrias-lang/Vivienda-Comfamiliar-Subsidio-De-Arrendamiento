@@ -7,7 +7,7 @@ import {
   ArrowRight, ShieldCheck, Sparkles 
 } from 'lucide-react';
 
-export const SubsidiosSection: React.FC<{ onStartCenso: () => void }> = ({ onStartCenso }) => {
+export const SubsidiosSection: React.FC<{ onStartCenso?: () => void }> = () => {
   const [selectedModalidad, setSelectedModalidad] = useState<ModalidadSubsidio | null>(null);
 
   const getIcon = (id: string) => {
@@ -133,13 +133,6 @@ export const SubsidiosSection: React.FC<{ onStartCenso: () => void }> = ({ onSta
               </p>
             </div>
           </div>
-
-          <button
-            onClick={onStartCenso}
-            className="px-6 py-3 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs sm:text-sm shrink-0 transition-all shadow-md shadow-amber-500/20 uppercase tracking-wider"
-          >
-            Postular a Subsidio Ahora
-          </button>
         </div>
 
       </div>
@@ -148,7 +141,6 @@ export const SubsidiosSection: React.FC<{ onStartCenso: () => void }> = ({ onSta
         <ModalSubsidioDetalle
           modalidad={selectedModalidad}
           onClose={() => setSelectedModalidad(null)}
-          onStartCenso={onStartCenso}
         />
       )}
     </section>

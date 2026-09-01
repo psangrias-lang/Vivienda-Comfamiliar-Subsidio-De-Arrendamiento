@@ -2,14 +2,12 @@ import React from 'react';
 import { KeyRound, ArrowRight, ShieldAlert, CheckCircle2, Building, Clock, DollarSign } from 'lucide-react';
 
 interface HeroSectionProps {
-  onStartCenso: () => void;
   onExploreArrendamiento: () => void;
   onOpenSimulador: () => void;
   onOpenPortalEmpresas?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  onStartCenso,
   onExploreArrendamiento,
   onOpenSimulador,
   onOpenPortalEmpresas,
@@ -50,21 +48,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
-              <button
-                onClick={onStartCenso}
-                className="w-full sm:w-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30 hover:scale-105 transition-all"
-              >
-                <span>Censo Afiliados</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
               {onOpenPortalEmpresas && (
                 <button
                   onClick={onOpenPortalEmpresas}
-                  className="w-full sm:w-auto px-5 py-3 rounded-2xl bg-white/15 hover:bg-white/25 border border-amber-300/50 text-amber-300 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all"
+                  className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition-all cursor-pointer"
                 >
-                  <Building className="w-4 h-4" />
+                  <Building className="w-4 h-4 text-slate-950" />
                   <span>Portal Empresas</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               )}
             </div>
@@ -173,11 +164,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               <div className="pt-2">
                 <button
-                  onClick={onStartCenso}
-                  className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg transition-all"
+                  onClick={onExploreArrendamiento}
+                  className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
                 >
-                  <span>Iniciar Formulario de Postulación</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <KeyRound className="w-4 h-4" />
+                  <span>Consultar Requisitos del Manual</span>
                 </button>
               </div>
 

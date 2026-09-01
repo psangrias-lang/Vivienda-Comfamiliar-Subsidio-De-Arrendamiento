@@ -1,13 +1,13 @@
 import React from 'react';
 import { ComfamiliarLogo } from './ComfamiliarLogo';
-import { MapPin, Phone, Mail, Clock, ShieldCheck, KeyRound, Lock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck, Lock } from 'lucide-react';
 
 interface FooterProps {
-  onStartCenso: () => void;
+  onStartCenso?: () => void;
   onOpenAdmin?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onStartCenso, onOpenAdmin }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   return (
     <footer id="contacto" className="bg-[#002447] text-slate-300 pt-16 pb-12 border-t-2 border-amber-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,16 +22,6 @@ export const Footer: React.FC<FooterProps> = ({ onStartCenso, onOpenAdmin }) => 
             <p className="text-xs text-slate-300 leading-relaxed">
               Vivienda Comfamiliar Risaralda. Comprometidos con el bienestar integral, la asignación del Subsidio de Arrendamiento Temporal y la solución habitacional de las familias de Risaralda.
             </p>
-
-            <div className="pt-2">
-              <button
-                onClick={onStartCenso}
-                className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 text-xs font-black flex items-center justify-center gap-2 transition-all shadow-md uppercase tracking-wider cursor-pointer"
-              >
-                <KeyRound className="w-4 h-4 text-slate-950" />
-                <span>Postular al Subsidio</span>
-              </button>
-            </div>
           </div>
 
           {/* Col 2: Sedes Principales */}

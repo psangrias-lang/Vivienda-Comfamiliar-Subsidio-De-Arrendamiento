@@ -7,7 +7,6 @@ import { SubsidioArrendamientoSection } from './components/SubsidioArrendamiento
 import { SimuladorSubsidio } from './components/SimuladorSubsidio';
 import { SubsidiosSection } from './components/SubsidiosSection';
 import { RequisitosAccordion } from './components/RequisitosAccordion';
-import { MultiStepCenso } from './components/CensoForm/MultiStepCenso';
 import { AdminDashboard } from './components/AdminDashboard';
 import { AdminLogin } from './components/AdminLogin';
 import { PortalEmpresas } from './components/PortalEmpresas';
@@ -46,11 +45,6 @@ export function App() {
     }
   }, [censos]);
 
-  // Guardar nuevo registro de censo / postulación
-  const handleSaveRegistro = (nuevoRegistro: CensoRegistro) => {
-    setCensos((prev) => [nuevoRegistro, ...prev]);
-  };
-
   // Actualizar estado de atención desde el panel administrativo
   const handleUpdateStatus = (id: string, newStatus: CensoRegistro['estadoAtencion']) => {
     setCensos((prev) =>
@@ -64,11 +58,6 @@ export function App() {
       setCensos(INITIAL_CENSOS);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_CENSOS));
     }
-  };
-
-  const handleStartCenso = () => {
-    setActiveTab('censo');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenPortalEmpresas = () => {
@@ -125,26 +114,19 @@ export function App() {
         {activeTab === 'portal' && (
           <>
             <HeroSection
-              onStartCenso={handleStartCenso}
               onExploreArrendamiento={handleExploreArrendamiento}
               onOpenSimulador={handleOpenSimulador}
               onOpenPortalEmpresas={handleOpenPortalEmpresas}
             />
             
             {/* Sección Central Foco: Subsidio de Arrendamiento (Manual Oficial) */}
-            <SubsidioArrendamientoSection
-              onStartPostulacion={handleStartCenso}
-            />
+            <SubsidioArrendamientoSection />
 
             {/* Simulador Interactivo de Canon y Subsidio */}
-            <SimuladorSubsidio
-              onStartCenso={handleStartCenso}
-            />
+            <SimuladorSubsidio />
 
             {/* Portafolio Completo FOVIS */}
-            <SubsidiosSection
-              onStartCenso={handleStartCenso}
-            />
+            <SubsidiosSection />
 
             {/* Requisitos, Validaciones y FAQ */}
             <RequisitosAccordion />
@@ -152,13 +134,37 @@ export function App() {
         )}
 
         {activeTab === 'censo' && (
-          <MultiStepCenso
-            onSaveRegistro={handleSaveRegistro}
-            onCancel={() => {
-              setActiveTab('portal');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          />
+          <div className="max-w-xl mx-auto my-16 p-8 bg-white rounded-3xl shadow-xl border border-slate-200 text-center space-y-4 animate-fade-in">
+            <div className="w-16 h-16 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mx-auto">
+              <span className="text-2xl font-black">⚙️</span>
+            </div>
+            <h2 className="text-2xl font-black text-slate-900">
+              Formulario en Proceso de Actualización
+            </h2>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              El formulario de postulación se encuentra temporalmente en actualización. Por favor accede a través del <strong>Portal de Empresas</strong> o consulta los requisitos del manual.
+            </p>
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                onClick={() => {
+                  setActiveTab('empresas');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs uppercase tracking-wider transition-all cursor-pointer"
+              >
+                Ir a Portal Empresas
+              </button>
+              <button
+                onClick={() => {
+                  setActiveTab('portal');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition-all cursor-pointer"
+              >
+                Volver al Inicio
+              </button>
+            </div>
+          </div>
         )}
 
         {activeTab === 'empresas' && (
@@ -196,7 +202,6 @@ export function App() {
 
       {/* Footer Institucional */}
       <Footer 
-        onStartCenso={handleStartCenso} 
         onOpenAdmin={handleOpenAdminAccess}
       />
 

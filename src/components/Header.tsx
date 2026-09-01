@@ -27,12 +27,6 @@ export const Header: React.FC<HeaderProps> = ({
     }, 100);
   };
 
-  const handleCensoClick = () => {
-    setActiveTab('censo');
-    setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const handleEmpresasClick = () => {
     setActiveTab('empresas');
     setMobileMenuOpen(false);
@@ -137,27 +131,15 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="hidden md:flex items-center gap-2">
             <button
               onClick={handleEmpresasClick}
-              className={`px-3.5 py-2.5 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`px-4 py-2.5 rounded-xl text-xs font-black border transition-all flex items-center gap-2 cursor-pointer ${
                 activeTab === 'empresas'
-                  ? 'bg-amber-400 text-slate-950 border-amber-400 font-black shadow-md'
-                  : 'bg-amber-50 text-amber-900 border-amber-200 hover:bg-amber-100'
+                  ? 'bg-amber-400 text-slate-950 border-amber-400 shadow-md ring-2 ring-amber-300'
+                  : 'bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 border-amber-400 shadow-sm hover:shadow-md'
               }`}
               title="Portal de Empresas para Censo de Colaboradores"
             >
-              <Building2 className="w-4 h-4 text-amber-700" />
+              <Building2 className="w-4 h-4 text-slate-950" />
               <span>Portal Empresas</span>
-            </button>
-
-            <button
-              onClick={handleCensoClick}
-              className={`px-4 py-2.5 rounded-xl font-black text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer ${
-                activeTab === 'censo'
-                  ? 'bg-amber-500 text-slate-950 ring-2 ring-amber-400'
-                  : 'bg-gradient-to-r from-[#003B70] to-[#002447] hover:from-[#002D62] hover:to-[#001A33] text-white border border-amber-400/40 hover:scale-[1.02]'
-              }`}
-            >
-              <KeyRound className="w-3.5 h-3.5 text-amber-400" />
-              <span>Postular a Subsidio</span>
             </button>
           </div>
 
@@ -165,17 +147,10 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={handleEmpresasClick}
-              className="px-2.5 py-1.5 rounded-lg bg-amber-100 text-amber-900 text-xs font-bold flex items-center gap-1"
+              className="px-3 py-1.5 rounded-lg bg-amber-400 text-slate-950 text-xs font-black flex items-center gap-1 shadow-sm"
             >
-              <Building2 className="w-3.5 h-3.5 text-amber-700" />
-              <span>Empresas</span>
-            </button>
-            <button
-              onClick={handleCensoClick}
-              className="px-2.5 py-1.5 rounded-lg bg-[#003B70] text-white text-xs font-bold flex items-center gap-1"
-            >
-              <KeyRound className="w-3.5 h-3.5 text-amber-400" />
-              <span>Postular</span>
+              <Building2 className="w-3.5 h-3.5 text-slate-950" />
+              <span>Portal Empresas</span>
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -201,9 +176,9 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <button
               onClick={handleEmpresasClick}
-              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-amber-900 bg-amber-50 hover:bg-amber-100 flex items-center gap-2"
+              className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-black text-slate-950 bg-amber-400 hover:bg-amber-300 flex items-center gap-2 shadow-sm"
             >
-              <Building2 className="w-4 h-4 text-amber-700" />
+              <Building2 className="w-4 h-4 text-slate-950" />
               <span>Portal de Empresas Aportantes</span>
             </button>
             <button
@@ -245,14 +220,6 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Search className="w-4 h-4 text-[#003B70]" />
               <span>Consultar Estado de Radicado</span>
-            </button>
-
-            <button
-              onClick={handleCensoClick}
-              className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-sm font-black flex items-center justify-center gap-2 shadow-md"
-            >
-              <KeyRound className="w-4 h-4 text-slate-950" />
-              <span>Postular a Subsidio de Arrendamiento</span>
             </button>
           </div>
         </div>
