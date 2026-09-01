@@ -9,20 +9,18 @@ Aplicación web moderna, responsiva y accesible desarrollada para **Vivienda Com
 
 1. **Subsidio de Arrendamiento Temporal (Manual de Operación Gerencial):**
    - Requisitos de afiliación para Dependientes ($\ge 2$ meses), Pensionados 2% ($\ge 12$ meses) e Independientes 2% ($\ge 12$ meses).
-   - Ingresos del hogar $\le 2\text{ SMMLV}$ (Categoría A).
-   - Monto: Hasta **0.6 SMMLV mensual** (máx. 90% del canon pactado) por **6 meses continuos transitorios**.
-   - Simulador interactivo de subsidio y canon.
-2. **Portal de Empresas Aportantes (Guía Oficial de 7 Páginas):**
-   - Acceso sin contraseñas mediante código OTP de 6 dígitos enviado por correo.
+   - Ingresos del grupo familiar: **Igual o menor a 2 SMMLV** (Hasta $3.501.810 COP).
+   - Monto: Hasta **0.6 SMMLV mensual** ($1.050.543 COP/mes, máx. 90% del canon pactado) por **6 meses continuos transitorios** (hasta $6.303.258 COP).
+   - Canon máximo permitido: 1% del tope VIS de 135 SMMLV ($2.363.722 COP).
+   - Simulador interactivo de canon y subsidio.
+2. **Portal de Empresas Aportantes (Guía Oficial):**
+   - Acceso sin contraseñas mediante código OTP de 6 dígitos enviado por correo corporativo.
    - Generador de enlace personalizado con token único y conexión directa al Formulario Oficial en Google Apps Script.
    - Mensaje modelo de WhatsApp y generador de Código QR para carteleras.
    - Panel de Gestión Humana con pestañas de *Resumen* (KPIs) y *Respuestas* con estricto régimen de *Habeas Data*.
-3. **Módulo de Censo y Postulación Post-Sismo (10 de Agosto):**
-   - Asistente multipaso (Identificación, Localización en Risaralda, Diagnóstico de Afectación y Consentimiento).
-   - Generación de número único de radicado e impresión de comprobante.
-   - Consulta de estado de radicado en línea.
-4. **Panel de Control FOVIS (Admin Dashboard):**
-   - Monitoreo en tiempo real de postulaciones, filtros avanzados y exportación completa a Excel / CSV.
+3. **Portafolio Integral FOVIS:**
+   - Modalidades: Vivienda Nueva VIS/VIP, Mejoramiento de Vivienda y Construcción en Sitio Propio.
+   - Descarga de fichas normativas y módulo interactivo de requisitos y preguntas frecuentes.
 
 ---
 

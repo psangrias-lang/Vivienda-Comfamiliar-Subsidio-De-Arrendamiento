@@ -35,7 +35,7 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
 
             <div className="pt-3 flex flex-wrap items-center gap-3 text-xs sm:text-sm font-bold text-slate-200">
               <span className="bg-white/10 px-3 py-1.5 rounded-xl border border-white/15">
-                Ingresos menores a 2 SMMLV (Categoría A)
+                Ingresos iguales o menores a 2 SMMLV
               </span>
               <span className="bg-amber-400/20 text-amber-300 px-3 py-1.5 rounded-xl border border-amber-400/30">
                 Valor: Hasta 0.6 SMMLV Mensual
@@ -84,7 +84,7 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
 
                   <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
                     <strong className="text-slate-900 block font-bold">2. Ingresos del grupo familiar:</strong>
-                    <span className="text-slate-600">Menores o iguales a 2 Salarios Mínimos (Categoría A).</span>
+                    <span className="text-slate-600">Menores o iguales a 2 Salarios Mínimos</span>
                   </div>
 
                   <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
@@ -94,7 +94,7 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
 
                   <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
                     <strong className="text-slate-900 block font-bold">4. Sin subsidio de vivienda previo:</strong>
-                    <span className="text-slate-600">No haber sido beneficiario anteriormente de FOVIS o FONVIVIENDA.</span>
+                    <span className="text-slate-600">No haber sido beneficiario anteriormente de subsidios de vivienda</span>
                   </div>
 
                   <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">

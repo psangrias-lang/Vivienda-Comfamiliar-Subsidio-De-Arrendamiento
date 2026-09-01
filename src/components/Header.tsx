@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { ComfamiliarLogo } from './ComfamiliarLogo';
-import { KeyRound, Search, Menu, X, PhoneCall, Building2 } from 'lucide-react';
+import { KeyRound, Menu, X, PhoneCall, Building2 } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'portal' | 'censo' | 'admin' | 'empresas';
-  setActiveTab: (tab: 'portal' | 'censo' | 'admin' | 'empresas') => void;
-  onOpenConsulta: () => void;
+  activeTab: 'portal' | 'censo' | 'empresas';
+  setActiveTab: (tab: 'portal' | 'censo' | 'empresas') => void;
+  onOpenConsulta?: () => void;
   totalCensos?: number;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
-  onOpenConsulta,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -50,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="hidden md:flex items-center gap-4 text-slate-200 text-xs shrink-0">
             <button
               onClick={handleEmpresasClick}
-              className="text-amber-300 hover:text-white font-black flex items-center gap-1 transition-colors"
+              className="text-amber-300 hover:text-white font-black flex items-center gap-1 transition-colors cursor-pointer"
             >
               <Building2 className="w-3.5 h-3.5" />
               <span>Portal de Empresas Aportantes</span>
@@ -60,14 +59,6 @@ export const Header: React.FC<HeaderProps> = ({
               <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
               PBX: <strong>(606) 3135700 opción 2</strong>
             </span>
-            <span className="text-amber-400/60">|</span>
-            <button 
-              onClick={onOpenConsulta}
-              className="hover:text-amber-300 underline decoration-amber-400 flex items-center gap-1 font-bold text-white transition-colors"
-            >
-              <Search className="w-3.5 h-3.5 text-amber-400" />
-              Consultar Radicado
-            </button>
           </div>
         </div>
       </div>
@@ -210,16 +201,6 @@ export const Header: React.FC<HeaderProps> = ({
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-blue-50 hover:text-[#003B70]"
             >
               Contacto y Sedes
-            </button>
-          </div>
-
-          <div className="pt-2 border-t border-slate-100 space-y-2">
-            <button
-              onClick={onOpenConsulta}
-              className="w-full py-2.5 px-3 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 flex items-center justify-center gap-2 hover:bg-slate-50"
-            >
-              <Search className="w-4 h-4 text-[#003B70]" />
-              <span>Consultar Estado de Radicado</span>
             </button>
           </div>
         </div>

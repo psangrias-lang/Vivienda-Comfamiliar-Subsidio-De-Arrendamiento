@@ -7,9 +7,9 @@ export type EstadoAfiliacion =
   | 'No afiliado / Comunidad general';
 
 export type CategoriaAfiliacion = 
-  | 'Cat A (Hasta 2 SMMLV)'
-  | 'Cat B (De 2 a 4 SMMLV)'
-  | 'Cat C (Más de 4 SMMLV)'
+  | 'Igual o menor a 2 SMMLV'
+  | 'De 2 a 4 SMMLV'
+  | 'Más de 4 SMMLV'
   | 'No sabe / Por verificar';
 
 export type TenenciaInmueble = 

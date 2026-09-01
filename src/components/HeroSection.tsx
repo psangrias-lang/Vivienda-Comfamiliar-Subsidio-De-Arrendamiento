@@ -135,7 +135,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <DollarSign className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-xs sm:text-sm">Ingresos menores a 2 SMMLV (Categoría A)</h4>
+                    <h4 className="font-bold text-white text-xs sm:text-sm">Ingresos iguales o menores a 2 SMMLV</h4>
                     <p className="text-xs text-slate-400 mt-0.5">Dirigido prioritariamente a afiliados con ingresos de hasta $3.501.810 COP.</p>
                   </div>
                 </div>

@@ -18,7 +18,7 @@ const INITIAL_FORM_DATA: Omit<CensoRegistro, 'id' | 'fechaRegistro' | 'estadoAte
   numeroDocumento: '',
   nombresApellidos: '',
   estadoAfiliacion: 'Afiliado activo trabajador',
-  categoriaAfiliacion: 'Cat A (Hasta 2 SMMLV)',
+  categoriaAfiliacion: 'Igual o menor a 2 SMMLV',
   empresaDondeLabora: '',
 
   municipio: 'Pereira (Capital)',

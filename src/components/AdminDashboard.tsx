@@ -48,7 +48,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
   // Métricas calculadas
   const totalCasos = censos.length;
-  const casosCatA = censos.filter((c) => c.categoriaAfiliacion.includes('Cat A')).length;
+  const casosCatA = censos.filter((c) => c.categoriaAfiliacion.includes('menor a 2 SMMLV') || c.categoriaAfiliacion.includes('Cat A')).length;
   const casosEvacuacion = censos.filter((c) => c.requiereEvacuacionInmediata).length;
   const totalMunicipiosAfectados = new Set(censos.map((c) => c.municipio)).size;
 
@@ -217,7 +217,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
           <div className="bg-white rounded-3xl p-5 border-2 border-slate-200 shadow-sm flex items-center justify-between">
             <div>
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Hogares Cat A (Hasta 2 SMMLV)</span>
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Hogares ≤ 2 SMMLV</span>
               <div className="text-2xl sm:text-3xl font-black text-[#003B70] mt-1">{casosCatA}</div>
               <span className="text-[11px] text-[#003B70] font-bold">Prioridad Manual Gerencial</span>
             </div>
@@ -293,10 +293,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 onChange={(e) => setFilterCategoria(e.target.value)}
                 className="px-3 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-semibold text-slate-700 outline-none"
               >
-                <option value="todos">Todas las Categorías</option>
-                <option value="Cat A">Cat A (Hasta 2 SMMLV)</option>
-                <option value="Cat B">Cat B (2 a 4 SMMLV)</option>
-                <option value="Cat C">Cat C</option>
+                <option value="todos">Todos los Rangos Salariales</option>
+                <option value="menor a 2 SMMLV">Igual o menor a 2 SMMLV</option>
+                <option value="2 a 4 SMMLV">De 2 a 4 SMMLV</option>
+                <option value="Más de 4 SMMLV">Más de 4 SMMLV</option>
               </select>
 
               <select

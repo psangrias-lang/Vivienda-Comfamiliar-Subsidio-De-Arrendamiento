@@ -1,13 +1,12 @@
 import React from 'react';
 import { ComfamiliarLogo } from './ComfamiliarLogo';
-import { MapPin, Phone, Mail, Clock, ShieldCheck, Lock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
 
 interface FooterProps {
   onStartCenso?: () => void;
-  onOpenAdmin?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
+export const Footer: React.FC<FooterProps> = () => {
   return (
     <footer id="contacto" className="bg-[#002447] text-slate-300 pt-16 pb-12 border-t-2 border-amber-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,20 +106,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
             <span className="hover:text-white cursor-pointer">Manual de Operación Gerencial</span>
             <span>•</span>
             <span className="hover:text-white cursor-pointer">Habeas Data (Ley 1581)</span>
-            
-            {onOpenAdmin && (
-              <>
-                <span>•</span>
-                <button
-                  onClick={onOpenAdmin}
-                  className="text-slate-400 hover:text-amber-300 transition-colors flex items-center gap-1 cursor-pointer font-medium"
-                  title="Acceso restringido para funcionarios de Comfamiliar Risaralda"
-                >
-                  <Lock className="w-3 h-3 text-amber-400/80" />
-                  <span>Acceso Funcionarios</span>
-                </button>
-              </>
-            )}
           </div>
         </div>
 
