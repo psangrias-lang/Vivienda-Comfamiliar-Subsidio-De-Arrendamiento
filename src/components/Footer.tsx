@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComfamiliarLogo } from './ComfamiliarLogo';
-import { MapPin, Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck, Calendar } from 'lucide-react';
+import { ModalCronograma } from './ModalCronograma';
 
 interface FooterProps {
   onStartCenso?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = () => {
+  const [isCronogramaOpen, setIsCronogramaOpen] = useState(false);
+
   return (
     <footer id="contacto" className="bg-[#002447] text-slate-300 pt-16 pb-12 border-t-2 border-amber-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +51,7 @@ export const Footer: React.FC<FooterProps> = () => {
             <div className="space-y-2.5 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>PBX Pereira: <strong>(606) 3135700 opción 2</strong></span>
+                <span>PBX Pereira: <strong>(606) 3135700 opción 5</strong></span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -60,11 +63,11 @@ export const Footer: React.FC<FooterProps> = () => {
             </div>
           </div>
 
-          {/* Col 4: Horarios & Compromiso */}
+          {/* Col 4: Horarios & Cronograma */}
           <div className="space-y-3">
             <h4 className="text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
               <Clock className="w-4 h-4 text-amber-400" />
-              <span>Horarios de Atención</span>
+              <span>Horarios y Cronograma</span>
             </h4>
 
             <div className="text-xs text-slate-300 space-y-2">
@@ -76,10 +79,16 @@ export const Footer: React.FC<FooterProps> = () => {
                 <strong className="text-white block font-bold">Viernes:</strong>
                 8:00 a.m. a 12:00 m. y 1:00 p.m. a 3:45 p.m.
               </p>
-              <p>
-                <strong className="text-white block font-bold">Atención Virtual:</strong>
-                Recepción 24/7 de solicitudes de Subsidio de Arrendamiento y Censo en esta plataforma.
-              </p>
+
+              <div className="pt-1">
+                <button
+                  onClick={() => setIsCronogramaOpen(true)}
+                  className="w-full mt-1.5 p-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black flex items-center justify-center gap-2 shadow-md transition-all text-xs cursor-pointer"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Ver Cronograma 2026</span>
+                </button>
+              </div>
             </div>
 
             <div className="pt-2 p-3 rounded-2xl bg-slate-800/90 border border-amber-400/40 text-[11px] text-amber-200 flex items-start gap-2">
@@ -110,6 +119,12 @@ export const Footer: React.FC<FooterProps> = () => {
         </div>
 
       </div>
+
+      {/* Modal Cronograma */}
+      <ModalCronograma 
+        isOpen={isCronogramaOpen} 
+        onClose={() => setIsCronogramaOpen(false)} 
+      />
     </footer>
   );
 };

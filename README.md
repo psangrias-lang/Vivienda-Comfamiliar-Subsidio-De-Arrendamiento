@@ -8,7 +8,7 @@
 Aplicación web moderna, responsiva y accesible desarrollada para **Vivienda Comfamiliar Risaralda**, diseñada con la identidad visual institucional (Azul Marino `#002447` / `#003B70`, Dorado `#D4AF37` / `#F5D061` y Blanco) y estructurada bajo los lineamientos oficiales:
 
 1. **Subsidio de Arrendamiento Temporal (Manual de Operación Gerencial):**
-   - Requisitos de afiliación para Dependientes ($\ge 2$ meses), Pensionados 2% ($\ge 12$ meses) e Independientes 2% ($\ge 12$ meses).
+   - Requisitos de afiliación para Dependientes (mínimo 2 meses), Pensionados 2% (mínimo 12 meses) e Independientes 2% (mínimo 12 meses).
    - Ingresos del grupo familiar: **Igual o menor a 2 SMMLV** (Hasta $3.501.810 COP).
    - Monto: Hasta **0.6 SMMLV mensual** ($1.050.543 COP/mes, máx. 90% del canon pactado) por **6 meses continuos transitorios** (hasta $6.303.258 COP).
    - Canon máximo permitido: 1% del tope VIS de 135 SMMLV ($2.363.722 COP).

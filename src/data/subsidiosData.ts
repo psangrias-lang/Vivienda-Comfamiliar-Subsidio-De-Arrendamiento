@@ -34,7 +34,7 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
     titulo: 'Vivienda Nueva (VIS / VIP)',
     subtitulo: 'Adquisición de vivienda de interés social o prioritario',
     tag: 'Fondo FOVIS',
-    montoMaximo: 'Ingresos ≤ 2 SMMLV: 30 SMMLV ($52.527.150) | 2 a 4 SMMLV: 20 SMMLV ($35.018.100)',
+    montoMaximo: 'Ingresos iguales o menores a 2 SMMLV: 30 SMMLV ($52.527.150) | De 2 a 4 SMMLV: 20 SMMLV ($35.018.100)',
     descripcion: 'Aporte en dinero otorgado por una sola vez al hogar beneficiario para facilitar la adquisición de vivienda nueva VIS o VIP en Risaralda: 30 SMMLV ($52.527.150 COP) para hogares con ingresos iguales o menores a 2 SMMLV y 20 SMMLV ($35.018.100 COP) para ingresos de 2 a 4 SMMLV.',
     dirigidoA: 'Hogares afiliados con ingresos totales menores o iguales a 4 SMMLV ($7.003.620 COP) que no tengan vivienda propia en el territorio nacional.',
     requisitosPrincipales: [

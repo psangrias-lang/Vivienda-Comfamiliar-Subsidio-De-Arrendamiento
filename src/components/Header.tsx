@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="text-amber-400/60">|</span>
             <span className="flex items-center gap-1">
               <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
-              PBX: <strong>(606) 3135700 opción 2</strong>
+              PBX: <strong>(606) 3135700 opción 5</strong>
             </span>
           </div>
         </div>

@@ -217,7 +217,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
           <div className="bg-white rounded-3xl p-5 border-2 border-slate-200 shadow-sm flex items-center justify-between">
             <div>
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Hogares ≤ 2 SMMLV</span>
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Hogares iguales o menores a 2 SMMLV</span>
               <div className="text-2xl sm:text-3xl font-black text-[#003B70] mt-1">{casosCatA}</div>
               <span className="text-[11px] text-[#003B70] font-bold">Prioridad Manual Gerencial</span>
             </div>
