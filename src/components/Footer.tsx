@@ -5,10 +5,19 @@ import { ModalCronograma } from './ModalCronograma';
 
 interface FooterProps {
   onStartCenso?: () => void;
+  onOpenCronograma?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = () => {
-  const [isCronogramaOpen, setIsCronogramaOpen] = useState(false);
+export const Footer: React.FC<FooterProps> = ({ onOpenCronograma }) => {
+  const [internalCronogramaOpen, setInternalCronogramaOpen] = useState(false);
+
+  const handleOpen = () => {
+    if (onOpenCronograma) {
+      onOpenCronograma();
+    } else {
+      setInternalCronogramaOpen(true);
+    }
+  };
 
   return (
     <footer id="contacto" className="bg-[#002447] text-slate-300 pt-16 pb-12 border-t-2 border-amber-400">
@@ -82,7 +91,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
               <div className="pt-1">
                 <button
-                  onClick={() => setIsCronogramaOpen(true)}
+                  onClick={handleOpen}
                   className="w-full mt-1.5 p-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black flex items-center justify-center gap-2 shadow-md transition-all text-xs cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
@@ -120,11 +129,13 @@ export const Footer: React.FC<FooterProps> = () => {
 
       </div>
 
-      {/* Modal Cronograma */}
-      <ModalCronograma 
-        isOpen={isCronogramaOpen} 
-        onClose={() => setIsCronogramaOpen(false)} 
-      />
+      {/* Modal Cronograma fallback */}
+      {!onOpenCronograma && (
+        <ModalCronograma 
+          isOpen={internalCronogramaOpen} 
+          onClose={() => setInternalCronogramaOpen(false)} 
+        />
+      )}
     </footer>
   );
 };

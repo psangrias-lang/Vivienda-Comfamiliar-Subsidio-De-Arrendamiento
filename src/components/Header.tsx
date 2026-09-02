@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { ComfamiliarLogo } from './ComfamiliarLogo';
-import { KeyRound, Menu, X, PhoneCall, Building2 } from 'lucide-react';
+import { KeyRound, Menu, X, PhoneCall, Building2, Calendar } from 'lucide-react';
 
 interface HeaderProps {
   activeTab: 'portal' | 'censo' | 'empresas';
   setActiveTab: (tab: 'portal' | 'censo' | 'empresas') => void;
+  onOpenCronograma?: () => void;
   onOpenConsulta?: () => void;
   totalCensos?: number;
 }
@@ -12,6 +13,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
+  onOpenCronograma,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -47,6 +49,16 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="hidden md:flex items-center gap-4 text-slate-200 text-xs shrink-0">
+            {onOpenCronograma && (
+              <button
+                onClick={onOpenCronograma}
+                className="text-amber-300 hover:text-white font-black flex items-center gap-1 transition-colors cursor-pointer"
+              >
+                <Calendar className="w-3.5 h-3.5 text-amber-400" />
+                <span>Cronograma 2026</span>
+              </button>
+            )}
+            <span className="text-amber-400/60">|</span>
             <button
               onClick={handleEmpresasClick}
               className="text-amber-300 hover:text-white font-black flex items-center gap-1 transition-colors cursor-pointer"
@@ -67,10 +79,12 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo Oficial Comfamiliar Risaralda Vivienda */}
+          {/* Logo Oficial Comfamiliar Risaralda Vivienda (Funciona como Inicio) */}
           <button 
             onClick={() => { setActiveTab('portal'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="text-left focus:outline-none"
+            className="text-left focus:outline-none hover:opacity-90 transition-opacity cursor-pointer flex items-center gap-2 group"
+            title="Ir al Inicio - Vivienda Comfamiliar Risaralda"
+            aria-label="Inicio - Vivienda Comfamiliar Risaralda"
           >
             <ComfamiliarLogo variant="dark" withSubtitle={true} />
           </button>
@@ -78,19 +92,8 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Menú de Navegación */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-bold text-slate-700">
             <button
-              onClick={() => { setActiveTab('portal'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className={`px-3 py-2 rounded-xl transition-all ${
-                activeTab === 'portal'
-                  ? 'text-[#003B70] bg-blue-50 border border-blue-200'
-                  : 'hover:text-[#003B70] hover:bg-slate-100'
-              }`}
-            >
-              Inicio
-            </button>
-
-            <button
               onClick={() => handleNavClick('arrendamiento-manual')}
-              className="px-3 py-2 rounded-xl hover:text-[#003B70] hover:bg-slate-100 transition-all flex items-center gap-1 text-[#003B70]"
+              className="px-3.5 py-2 rounded-xl hover:text-[#003B70] hover:bg-slate-100 transition-all flex items-center gap-1.5 text-[#003B70]"
             >
               <KeyRound className="w-4 h-4 text-amber-600" />
               <span>Subsidio Arrendamiento</span>
@@ -116,6 +119,16 @@ export const Header: React.FC<HeaderProps> = ({
             >
               Contacto
             </button>
+
+            {onOpenCronograma && (
+              <button
+                onClick={onOpenCronograma}
+                className="px-3.5 py-2 rounded-xl text-[#003B70] bg-amber-400/20 hover:bg-amber-400/35 border border-amber-400/50 font-black transition-all flex items-center gap-1.5 cursor-pointer shadow-xs hover:shadow-sm"
+              >
+                <Calendar className="w-4 h-4 text-amber-600" />
+                <span>Cronograma 2026</span>
+              </button>
+            )}
           </nav>
 
           {/* Botones de Acción Superior */}
@@ -172,6 +185,18 @@ export const Header: React.FC<HeaderProps> = ({
               <Building2 className="w-4 h-4 text-slate-950" />
               <span>Portal de Empresas Aportantes</span>
             </button>
+            {onOpenCronograma && (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenCronograma();
+                }}
+                className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-black text-[#003B70] bg-blue-50 hover:bg-blue-100 flex items-center gap-2 border border-blue-200 shadow-xs"
+              >
+                <Calendar className="w-4 h-4 text-amber-600" />
+                <span>Cronograma Oficial de Postulaciones 2026</span>
+              </button>
+            )}
             <button
               onClick={() => handleNavClick('arrendamiento-manual')}
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold text-slate-800 hover:bg-blue-50 hover:text-[#003B70]"

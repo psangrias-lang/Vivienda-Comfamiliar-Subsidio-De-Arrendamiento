@@ -1,16 +1,18 @@
 import React from 'react';
-import { KeyRound, ArrowRight, ShieldAlert, CheckCircle2, Building, Clock, DollarSign } from 'lucide-react';
+import { KeyRound, ArrowRight, ShieldAlert, CheckCircle2, Building, Clock, DollarSign, Calendar } from 'lucide-react';
 
 interface HeroSectionProps {
   onExploreArrendamiento: () => void;
   onOpenSimulador: () => void;
   onOpenPortalEmpresas?: () => void;
+  onOpenCronograma?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onExploreArrendamiento,
   onOpenSimulador,
   onOpenPortalEmpresas,
+  onOpenCronograma,
 }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#002447] via-[#003B70] to-[#0A3161] text-white pt-10 pb-20 sm:pt-14 sm:pb-28">
@@ -48,6 +50,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
+              {onOpenCronograma && (
+                <button
+                  onClick={onOpenCronograma}
+                  className="w-full sm:w-auto px-5 py-3 rounded-2xl bg-white/15 hover:bg-white/25 border-2 border-amber-400 text-amber-200 hover:text-white font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg backdrop-blur-md transition-all cursor-pointer"
+                >
+                  <Calendar className="w-4 h-4 text-amber-300" />
+                  <span>Fechas y Cronograma 2026</span>
+                </button>
+              )}
               {onOpenPortalEmpresas && (
                 <button
                   onClick={onOpenPortalEmpresas}
@@ -82,18 +93,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <button
                 onClick={onExploreArrendamiento}
-                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-xl shadow-amber-500/20 transition-all hover:-translate-y-0.5"
+                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-xl shadow-amber-500/20 transition-all hover:-translate-y-0.5 cursor-pointer"
               >
                 <KeyRound className="w-5 h-5" />
                 <span>Ver Requisitos del Manual</span>
               </button>
 
+              {onOpenCronograma && (
+                <button
+                  onClick={onOpenCronograma}
+                  className="px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 border-2 border-amber-300/80 text-amber-200 hover:text-white font-black text-sm sm:text-base flex items-center justify-center gap-2 backdrop-blur-sm transition-all cursor-pointer hover:-translate-y-0.5"
+                >
+                  <Calendar className="w-5 h-5 text-amber-400" />
+                  <span>Cronograma y Fechas 2026</span>
+                </button>
+              )}
+
               <button
                 onClick={onOpenSimulador}
-                className="px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 border-2 border-white/20 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 backdrop-blur-sm transition-all"
+                className="px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 border-2 border-white/20 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 backdrop-blur-sm transition-all cursor-pointer"
               >
                 <Building className="w-4 h-4 text-amber-300" />
-                <span>Simular Subsidio de Canon</span>
+                <span>Simular Subsidio</span>
               </button>
             </div>
 
@@ -162,12 +183,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 space-y-2">
+                {onOpenCronograma && (
+                  <button
+                    onClick={onOpenCronograma}
+                    className="w-full py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
+                  >
+                    <Calendar className="w-4 h-4 text-slate-950" />
+                    <span>Ver Fechas de Convocatorias 2026</span>
+                  </button>
+                )}
                 <button
                   onClick={onExploreArrendamiento}
-                  className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
+                  className="w-full py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
                 >
-                  <KeyRound className="w-4 h-4" />
+                  <KeyRound className="w-3.5 h-3.5 text-amber-300" />
                   <span>Consultar Requisitos del Manual</span>
                 </button>
               </div>

@@ -9,11 +9,13 @@ import { SubsidiosSection } from './components/SubsidiosSection';
 import { RequisitosAccordion } from './components/RequisitosAccordion';
 import { PortalEmpresas } from './components/PortalEmpresas';
 import { Footer } from './components/Footer';
+import { ModalCronograma } from './components/ModalCronograma';
 
 const STORAGE_KEY = 'censo_vivienda_comfamiliar_records_v2';
 
 export function App() {
   const [activeTab, setActiveTab] = useState<'portal' | 'censo' | 'empresas'>('portal');
+  const [isCronogramaOpen, setIsCronogramaOpen] = useState(false);
 
   // Inicializar estado con LocalStorage o datos iniciales
   const [censos] = useState<CensoRegistro[]>(() => {
@@ -65,6 +67,7 @@ export function App() {
       <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
+        onOpenCronograma={() => setIsCronogramaOpen(true)}
       />
 
       {/* Contenido Principal según Pestaña Activa */}
@@ -75,10 +78,13 @@ export function App() {
               onExploreArrendamiento={handleExploreArrendamiento}
               onOpenSimulador={handleOpenSimulador}
               onOpenPortalEmpresas={handleOpenPortalEmpresas}
+              onOpenCronograma={() => setIsCronogramaOpen(true)}
             />
             
             {/* Sección Central Foco: Subsidio de Arrendamiento (Manual Oficial) */}
-            <SubsidioArrendamientoSection />
+            <SubsidioArrendamientoSection 
+              onOpenCronograma={() => setIsCronogramaOpen(true)}
+            />
 
             {/* Simulador Interactivo de Canon y Subsidio */}
             <SimuladorSubsidio />
@@ -136,7 +142,13 @@ export function App() {
       </main>
 
       {/* Footer Institucional */}
-      <Footer />
+      <Footer onOpenCronograma={() => setIsCronogramaOpen(true)} />
+
+      {/* Modal Cronograma Global */}
+      <ModalCronograma 
+        isOpen={isCronogramaOpen} 
+        onClose={() => setIsCronogramaOpen(false)} 
+      />
     </div>
   );
 }

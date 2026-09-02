@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { 
   KeyRound, Building2, Clock, ShieldCheck, CheckCircle2, 
-  FileText, DollarSign
+  FileText, DollarSign, Calendar
 } from 'lucide-react';
 
 interface SubsidioArrendamientoSectionProps {
   onStartPostulacion?: () => void;
+  onOpenCronograma?: () => void;
 }
 
-export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSectionProps> = () => {
+export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSectionProps> = ({
+  onOpenCronograma,
+}) => {
   const [activeTabDoc, setActiveTabDoc] = useState<'hogar' | 'vivienda'>('hogar');
 
   return (
@@ -47,11 +50,53 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
                 Vigilado Supersubsidio
               </span>
             </div>
+
+            {onOpenCronograma && (
+              <div className="pt-2">
+                <button
+                  onClick={onOpenCronograma}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-amber-500/20 transition-all cursor-pointer hover:scale-[1.02]"
+                >
+                  <Calendar className="w-4 h-4 text-slate-950" />
+                  <span>Consultar Cronograma Oficial y Fechas 2026</span>
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
         {/* 1. REQUISITOS, VALOR Y DURACIÓN (Slide 2 del Manual) */}
         <div>
+          {/* Banner destacado de Convocatorias y Fechas 2026 */}
+          <div className="mb-10 p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-blue-950 via-[#003B70] to-[#002447] text-white border-2 border-amber-400/60 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4 text-left">
+              <div className="p-3.5 rounded-2xl bg-amber-400 text-slate-950 font-black shrink-0 shadow-md">
+                <Calendar className="w-6 h-6" />
+              </div>
+              <div>
+                <span className="text-[11px] font-black uppercase tracking-wider text-amber-300 block">
+                  Convocatorias y Calendario de Postulación
+                </span>
+                <h4 className="text-base sm:text-lg font-black text-white">
+                  Cronograma Oficial de Subsidios 2026
+                </h4>
+                <p className="text-xs text-slate-200 mt-0.5">
+                  Revisa las 3 rondas del Subsidio de Arrendamiento y la postulación al Componente Rural.
+                </p>
+              </div>
+            </div>
+
+            {onOpenCronograma && (
+              <button
+                onClick={onOpenCronograma}
+                className="w-full md:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition-all cursor-pointer shrink-0"
+              >
+                <Calendar className="w-4 h-4 text-slate-950" />
+                <span>Ver Fechas y Cronograma 2026</span>
+              </button>
+            )}
+          </div>
+
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
               Requisitos, Valor y Duración
