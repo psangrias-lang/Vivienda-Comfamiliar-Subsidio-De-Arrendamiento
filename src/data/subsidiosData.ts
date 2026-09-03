@@ -12,8 +12,8 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
     requisitosPrincipales: [
       'Afiliado al día: Dependientes (mínimo 2 meses de aportes continuos), Pensionados 2% (mínimo 12 meses continuos), Independientes 2% (mínimo 12 meses de aportes).',
       'Ingresos del grupo familiar iguales o menores a 2 SMMLV (hasta $3.501.810 COP).',
-      'No ser propietarios ni poseedores: Ningún miembro del hogar puede tener vivienda propia (Excepción: Si un miembro es propietario o poseedor, debe presentar un certificado oficial que indique que la vivienda sufrió un colapso total o que está inhabitable).',
-      'Beneficios de Subsidios Previos: Ningún miembro del hogar debe haber sido beneficiario de un subsidio de vivienda anteriormente (Excepción: Si adquirió una vivienda con un subsidio previo pero esta se vio afectada, debe presentar un certificado oficial que indique que la vivienda tuvo un colapso total o que está inhabitable).',
+      'No ser propietarios ni poseedores: Ningún miembro del hogar puede tener vivienda propia.',
+      'Beneficios de Subsidios Previos: Ningún miembro del hogar debe haber sido beneficiario de un subsidio de vivienda anteriormente.',
       'Valor del subsidio: Hasta 0.6 SMMLV ($1.050.543 COP/mes) y en ningún caso superar el 90% del canon pactado.',
       'Vivienda urbana independiente, con servicios públicos de acueducto y energía, y canon hasta el 1% del tope VIS (135 SMMLV, máx. $2.363.722 COP).'
     ],

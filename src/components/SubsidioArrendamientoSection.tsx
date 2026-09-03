@@ -132,20 +132,14 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
                     <span className="text-slate-600">Menores o iguales a 2 Salarios Mínimos</span>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 space-y-1.5">
+                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
                     <strong className="text-slate-900 block font-bold">3. No ser propietarios ni poseedores:</strong>
-                    <p className="text-slate-600">Ningún miembro del hogar puede tener vivienda propia.</p>
-                    <div className="mt-1 p-2.5 rounded-xl bg-amber-500/10 border border-amber-300/60 text-xs text-amber-950">
-                      <strong className="text-amber-800">Excepción:</strong> Si un miembro es propietario o poseedor, debe presentar un certificado oficial que indique que la vivienda sufrió un colapso total o que está inhabitable.
-                    </div>
+                    <span className="text-slate-600">Ningún miembro del hogar puede tener vivienda propia.</span>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 space-y-1.5">
+                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
                     <strong className="text-slate-900 block font-bold">4. Beneficios de Subsidios Previos:</strong>
-                    <p className="text-slate-600">Ningún miembro del hogar debe haber sido beneficiario de un subsidio de vivienda anteriormente.</p>
-                    <div className="mt-1 p-2.5 rounded-xl bg-amber-500/10 border border-amber-300/60 text-xs text-amber-950">
-                      <strong className="text-amber-800">Excepción:</strong> Si adquirió una vivienda con un subsidio previo pero esta se vio afectada, debe presentar un certificado oficial que indique que la vivienda tuvo un colapso total o que está inhabitable.
-                    </div>
+                    <span className="text-slate-600">Ningún miembro del hogar debe haber sido beneficiario de un subsidio de vivienda anteriormente.</span>
                   </div>
                 </div>
               </div>
