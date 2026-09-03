@@ -141,11 +141,6 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
                     <strong className="text-slate-900 block font-bold">4. Sin subsidio de vivienda previo:</strong>
                     <span className="text-slate-600">No haber sido beneficiario anteriormente de subsidios de vivienda</span>
                   </div>
-
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <strong className="text-slate-900 block font-bold">5. Conformación de hogar:</strong>
-                    <span className="text-slate-600">Persona sola (soltero) o núcleo familiar consolidado (casado o unión libre).</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -429,12 +424,6 @@ export const SubsidioArrendamientoSection: React.FC<SubsidioArrendamientoSection
                         <div>Copia legible de identificación del propietario/arrendador:</div>
                         <div>• <strong>Persona natural:</strong> Copia de la cédula de ciudadanía.</div>
                         <div>• <strong>Persona jurídica:</strong> Certificado de Cámara de Comercio y copia de cédula del Representante Legal.</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-5 py-4 font-bold text-[#003B70]">Formato de Solicitud</td>
-                      <td className="px-5 py-4">
-                        Formato de solicitud de Subsidio de Arrendamiento diligenciado donde se pacta el canon de arrendamiento para el cálculo del subsidio.
                       </td>
                     </tr>
                   </tbody>

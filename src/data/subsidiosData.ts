@@ -14,7 +14,6 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
       'Ingresos del grupo familiar iguales o menores a 2 SMMLV (hasta $3.501.810 COP).',
       'No ser propietarios ni poseedores de vivienda en el territorio nacional.',
       'No haber sido beneficiario de subsidio familiar de vivienda antes.',
-      'Conformación de hogar: Persona sola (soltero) o núcleo familiar consolidado (casado o unión libre).',
       'Valor del subsidio: Hasta 0.6 SMMLV ($1.050.543 COP/mes) y en ningún caso superar el 90% del canon pactado.',
       'Vivienda urbana independiente, con servicios públicos de acueducto y energía, y canon hasta el 1% del tope VIS (135 SMMLV, máx. $2.363.722 COP).'
     ],
@@ -24,7 +23,7 @@ export const MODALIDADES_SUBSIDIO: ModalidadSubsidio[] = [
       'Certificados de ingresos: Laboral no mayor a 30 días (dependientes), Certificación contador + TP + antecedentes JCC no mayor a 30 días (independientes), o último desprendible de pensión (pensionados).',
       'Estado civil: Solteros (ninguno), Casados (registro civil de matrimonio), Unión de hecho (escritura, sentencia o acta conciliación), Divorciados (registro civil con nota de liquidación sociedad conyugal).',
       'Certificación médica EPS en caso de miembros con discapacidad.',
-      'Vivienda: Certificado de Tradición y Libertad (no mayor a 30 días), Impuesto Predial del año actual cancelado, Identificación del propietario y Formato de Solicitud de Arrendamiento.'
+      'Vivienda: Certificado de Tradición y Libertad (no mayor a 30 días), Impuesto Predial del año actual cancelado e Identificación del propietario.'
     ],
     icono: 'KeyRound',
     colorTheme: 'amber'
@@ -156,7 +155,7 @@ export const PREGUNTAS_FRECUENTES_SUBSIDIO = [
   },
   {
     pregunta: '¿Qué documentos se deben presentar para legalizar el subsidio de arrendamiento?',
-    respuesta: 'Por el Hogar: Formulario de postulación diligenciado, fotocopia de cédulas de mayores de 18 años, registro civil de menores, certificado de ingresos (laboral no mayor a 30 días, contador para independientes con vigencia no mayor a 30 días o desprendible de pensión), documentos de estado civil (matrimonio, unión de hecho o divorcio si aplica) y certificado médico EPS por discapacidad. Por la Vivienda: Certificado de Tradición (no mayor a 30 días), Impuesto Predial del año actual cancelado, copia de cédula del arrendador (o Cámara de Comercio) y Formato de Solicitud de Arrendamiento.'
+    respuesta: 'Por el Hogar: Formulario de postulación diligenciado, fotocopia de cédulas de mayores de 18 años, registro civil de menores, certificado de ingresos (laboral no mayor a 30 días, contador para independientes con vigencia no mayor a 30 días o desprendible de pensión), documentos de estado civil (matrimonio, unión de hecho o divorcio si aplica) y certificado médico EPS por discapacidad. Por la Vivienda: Certificado de Tradición (no mayor a 30 días), Impuesto Predial del año actual cancelado y copia de cédula del arrendador (o Cámara de Comercio).'
   },
   {
     pregunta: '¿Tiene algún costo la postulación al subsidio o el censo en Comfamiliar Risaralda?',
